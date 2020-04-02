@@ -25,8 +25,8 @@
 
 <script>
 import axios from 'axios'
-import EventBus from '../js/event-bus'
-import {getContentFromApi} from '../js/axios-service'
+import EventBus from '../assets/js/event-bus'
+import {getContentFromApi} from '../assets/js/axios-service'
 export default {
   name: "Content",
   data() {

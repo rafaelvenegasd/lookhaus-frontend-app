@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import EventBus from '../js/event-bus'
-import {getDetails} from '../js/axios-service'
+import EventBus from '../assets/js/event-bus'
+import {getDetails} from '../assets/js/axios-service'
 export default {
     name: "Navbar",
     data() {
