@@ -5,6 +5,7 @@ import App from './views/main.vue'
 // import './assets/styles/importer.scss';
 import VuePaginate from 'vue-paginate';
 
+
 Vue.use(VuePaginate);
 Vue.config.productionTip = false;
 Vue.prototype.$http = axios;

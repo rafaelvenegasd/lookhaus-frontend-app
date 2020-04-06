@@ -15,11 +15,12 @@ function cssfy() {
     );
 }
 
-
 function watch() {
     gulp.watch("./src/assets/styles/**/*.scss", cssfy);
     gulp.watch("./src/assets/styles/**/*.scss");
 }
   
+
+
 exports.cssfy = cssfy;
 exports.watch = watch;
