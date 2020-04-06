@@ -1,12 +1,12 @@
 {
-  "name": "Property_Search_Engine_Company_Mobile",
+  "name": "property_search_engine_company_mobile",
   "version": "1.0.0",
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
-    "start": "node ./server.js",
+    "start": "node ./device-detector.js",
     "webpack": "webpack --mode development",
-    "dev": "gulp cssfy && webpack-dev-server --mode development --open",
+    "dev": "webpack-dev-server --mode development --open",
     "prod": "webpack --mode production",
     "postinstall": "webpack --mode production"
   },
