@@ -14,7 +14,7 @@ function cssfy() {
         .pipe( notify({ message: '\n\n✅  ===> STYLE — completed!\n', onLast: true }))
     );
 }
-
+//test comment
 function watch() {
     gulp.watch("./src/assets/styles/**/*.scss", cssfy);
     gulp.watch("./src/assets/styles/**/*.scss");
