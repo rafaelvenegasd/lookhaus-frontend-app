@@ -1,11 +1,9 @@
 import Vue from 'vue'
-import App from '../web/views/main.vue'
-import Login from '../web/views/login.vue'
+import App from '../../views/web/main.vue'
 import VueRouter from 'vue-router'
 
 const routes = [
-    { path: '/', component: App },
-    { path: '/login', component: Login }
+    { path: '/', component: App }
 ]
   
 const router = new VueRouter({
