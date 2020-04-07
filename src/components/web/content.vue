@@ -9,11 +9,9 @@
           </tr>
         </thead>
         <tbody>
-          <tr v-for="item in paginated('items')" :key="item.item_id">
+          <!-- <tr v-for="item in paginated('items')" :key="item.item_id">
             <td>{{item.item_name}}</td>
-            <td>{{item.price_current}}</td>
-            <td><button :id=item.item_id class="btn btn-success btn-sm" v-on:click="getDetails(item.item_name, item.item_id)" >Detail</button></td>
-          </tr>
+          </tr> -->
         </tbody>
       </table>
       </paginate>
@@ -26,7 +24,7 @@
 <script>
 import axios from 'axios'
 import EventBus from '../assets/js/event-bus'
-import {getContentFromApi} from '../assets/js/axios-service'
+import {getContentFromApi} from '../../common/js/axios-service'
 export default {
   name: "Content",
   data() {
@@ -41,7 +39,8 @@ export default {
         console.error(err)
       } 
       else{
-        this.items = data;
+        // this.items = data;
+        console.log(data);
       }
     });
   }, 

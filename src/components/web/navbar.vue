@@ -12,7 +12,7 @@
 
 <script>
 import EventBus from '../assets/js/event-bus'
-import {getDetails} from '../assets/js/axios-service'
+// import {getDetails} from '../assets/js/axios-service'
 export default {
     name: "Navbar",
     data() {
@@ -23,16 +23,16 @@ export default {
     },
     methods:{
         search(){
-          getDetails(this.message, (err, data) =>{
-                if(err){
-                    console.error(err)
-                } 
-                else{
-                    this.id = data[0].item_id;
-                    EventBus.$emit('searching', this.message);
-                    EventBus.$emit('chart', this.id);
-                }
-            })
+          // getDetails(this.message, (err, data) =>{
+          //       if(err){
+          //           console.error(err)
+          //       } 
+          //       else{
+          //           this.id = data[0].item_id;
+          //           EventBus.$emit('searching', this.message);
+          //           EventBus.$emit('chart', this.id);
+          //       }
+          //   })
 
         }
     }

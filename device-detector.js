@@ -1,9 +1,18 @@
+var express = require('express');
+var app = express();
 
-require('http').createServer(function(req, res){
+app.get('/', function (req, res) {
       DeviceDetector = require("device-detector-js");
       const deviceDetector = new DeviceDetector();
-      const userAgent = req.headers['user-agent'];
+      const userAgent = req.headers["user-agent"];
       const detector = deviceDetector.parse(userAgent);
       const device = detector.device.type; 
-      console.log(device);
-}).listen(process.env.PORT || 3000);
+      if (device == 'desktop'){
+            console.log('desktop');
+            res.render('index');
+      }
+      else{
+            console.log('mobile');
+      }
+});
+
