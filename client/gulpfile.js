@@ -24,13 +24,12 @@ function mobile() {
 }
 //test comment
 function watch() {
-    gulp.watch("./assets/styles/web/**/*.scss", desktop);
-    gulp.watch("./assets/styles/mobile/**/*.scss", mobile);
-    gulp.watch("./assets/styles/web/**/*.scss");
-    gulp.watch("./assets/styles/mobile/**/*.scss");
+    gulp.watch("./src/assets/styles/web/**/*.scss", desktop);
+    gulp.watch(".src/assets/styles/mobile/**/*.scss", mobile);
+    gulp.watch(".src/assets/styles/web/**/*.scss");
+    gulp.watch(".src/assets/styles/mobile/**/*.scss");
 }
   
-
 
 exports.desktop = desktop;
 exports.mobile = mobile;

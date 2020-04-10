@@ -10,10 +10,10 @@ router.get('/', (req, res) => {
     const device = detector.device.type; 
 
     if (device == 'desktop'){
-      res.send('desktop');
+      return res.send('desktop');
     }
     else{
-      res.send('mobile');
+      return res.send('mobile');
     }
 });
 
