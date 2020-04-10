@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- <Navbar></Navbar> -->
-    <div class="d-flex mt-2 mb-2 container"> hola mundo</div>
+    <div class="d-flex mt-2 mb-2 container"> hola mundo desde mobile</div>
         <!-- <Content></Content>
     </div>
     <Footer></Footer> -->
@@ -11,7 +11,7 @@
 <script>
 
 export default {
-  name: "Home",
+  name: "MobileHome",
   // components:{
   //   Navbar,
   //   Content, 
