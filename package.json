@@ -1,18 +1,24 @@
 {
-  "name": "Property_Search_Engine_Company_Mobile",
+  "name": "property_search_engine_company_mobile",
   "version": "1.0.0",
+<<<<<<< HEAD
   "description": "",
   "main": "webpack.config.js",
   "engines": {
     "node": "10.16.3",
     "npm": "6.13.7"
+=======
+  "description": "Deployed version of this project is hosted at Heroku:\r * **Node API -> NOT DEPLOYED YET**\r * **Laravel APP -> NOT DEPLOYED YET**\r * **jS APP -> NOT DEPLOYED YET**",
+  "main": "index.js",
+  "engines": {
+    "node": "12.14.1",
+    "npm": "6.13.4"
+>>>>>>> develop
   },
   "scripts": {
-    "start": "node ./server.js",
-    "webpack": "webpack --mode development",
-    "dev": "gulp cssfy && webpack-dev-server --mode development --open",
-    "prod": "webpack --mode production",
-    "postinstall": "webpack --mode production"
+    "postinstall": "cd client/ && npm install",
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js"
   },
   "repository": {
     "type": "git",
@@ -21,41 +27,12 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "@babel/core": "^7.7.5",
-    "@babel/preset-env": "^7.7.5",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^8.0.6",
-    "babel-preset-env": "^1.7.0",
-    "css-loader": "^3.3.0",
-    "dotenv-webpack": "^1.7.0",
-    "html-loader": "^0.5.5",
-    "html-webpack-plugin": "^3.2.0",
-    "node-sass": "^4.13.0",
-    "sass-loader": "^8.0.0",
-    "style-loader": "^1.0.1",
-    "vue": "^2.6.10",
-    "vue-loader": "^15.7.2",
-    "vue-style-loader": "^4.1.2",
-    "vue-template-compiler": "^2.6.10",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.9.0"
-  },
   "dependencies": {
-    "axios": "^0.19.0",
-    "bootstrap": "^4.4.1",
-    "gulp": "^4.0.2",
-    "gulp-minify": "^3.1.0",
-    "gulp-notify": "^3.2.0",
-    "gulp-sass": "^4.0.2",
-    "jquery": "^3.4.1",
-    "materialize-css": "^1.0.0-rc.2",
-    "node-static": "^0.7.11",
-    "popper.js": "^1.16.0",
-    "sassdoc-theme-luckycss": "^1.0.1",
-    "vue-axios-plugin": "^1.3.0",
-    "vue-paginate": "^3.6.0",
-    "vue-router": "^3.1.6"
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "device-detector-js": "^2.2.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.2"
   }
 }
