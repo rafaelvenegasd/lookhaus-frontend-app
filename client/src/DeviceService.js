@@ -1,19 +1,23 @@
-import { axios } from "axios";
-const backCall = 'device/';
+const axios = require('axios');
 
-class DeviceService{
-    static getDevice(){
-        return new Promise (async (resolve, reject) => {
-            try {
-                const res = await axios.get(backCall);
-                const data = res.data;
-                resolve(data);
-            } catch (error) {
-                reject(error);
-            }
-        })
-    }
+function DeviceService(backCall){
+    this.backCall = backCall;
+}
+
+DeviceService.prototype.getDevice = function (cb) {
+    axios.get(this.backCall)
+    .then(function (res) {
+        return cb(null, res.data);
+    })
+    .catch(function(err) {
+        console.log(err);
+        return cb(err, null);
+    })
 }
 
 export default DeviceService;
+
+
+
+
 
