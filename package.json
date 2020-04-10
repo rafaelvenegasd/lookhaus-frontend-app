@@ -1,19 +1,11 @@
 {
   "name": "property_search_engine_company_mobile",
   "version": "1.0.0",
-<<<<<<< HEAD
-  "description": "",
-  "main": "webpack.config.js",
-  "engines": {
-    "node": "10.16.3",
-    "npm": "6.13.7"
-=======
   "description": "Deployed version of this project is hosted at Heroku:\r * **Node API -> NOT DEPLOYED YET**\r * **Laravel APP -> NOT DEPLOYED YET**\r * **jS APP -> NOT DEPLOYED YET**",
   "main": "index.js",
   "engines": {
     "node": "12.14.1",
     "npm": "6.13.4"
->>>>>>> develop
   },
   "scripts": {
     "postinstall": "cd client/ && npm install",
