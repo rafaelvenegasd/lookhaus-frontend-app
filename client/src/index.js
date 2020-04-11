@@ -11,4 +11,25 @@ Vue.use(VuePaginate);
 Vue.config.productionTip = false;
 Vue.prototype.$http = axios;
 
-new Vue({ el: '#app', router, render: h => h(App) })
+
+function loadApp(r) {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve(
+            new Vue({ el: '#app', r, render: h => h(App) })
+        );
+      }, 2000);
+    });
+  }
+
+  async function asyncCall(r) {
+    console.log(router);
+    const result = await loadApp(r);
+    console.log(result);
+    // expected output: 'resolved'
+  }
+  
+  asyncCall(router);
+
+
+
