@@ -1,30 +1,29 @@
 import Vue from 'vue'
 import getDevice from '../DeviceService'
 import VueRouter from 'vue-router'
+import AppDesktop from '../AppDesktop.vue'
+import AppMobile from '../AppMobile.vue'
 import DesktopHome from '../views/desktop/Home.vue'
 import DesktopLogin from '../views/desktop/Login.vue'
 import MobileHome from '../views/mobile/Home.vue'
 
 //Decide if mount a device or a mobile view
-var routes = [];
-
 getDevice((err, data) =>{
     if(err){
       console.error(err)
     } 
     else{
         if( data == 'desktop'){
-            routes.push({path: '/', name: "DesktopHome", component: DesktopHome })
-            routes.push({path: '/login', name: "DesktopLogin", component: DesktopLogin })
+            var routes = [{path: '/', name: "DesktopHome", component: DesktopHome }, {path: '/login', name: "DesktopLogin", component: DesktopLogin }];
+            Vue.use(VueRouter);
+            const router = new VueRouter({mode: 'history', routes: routes})
+            new Vue({ el: '#app', router, render: h => h(AppDesktop) })
         }else{
             routes.push({ path: '/', name: "MobileHome", component: MobileHome })
+            Vue.use(VueRouter);
+            const router = new VueRouter({mode: 'history', routes: routes})
+            new Vue({ el: '#app', router, render: h => h(AppMobile) })
         }
-    return routes;
     }
   });
 
-//Vue router
-Vue.use(VueRouter);
-const router = new VueRouter({mode: 'history', routes: routes})
-
-export default router;
