@@ -1,6 +1,6 @@
 <template>
-  <nav class=" navbar navbar-dark bg-blue">
-      <a class="navbar-brand" href="/">Logo</a>
+  <nav class=" navbar navbarNav">
+      <a href="/"><img src="../../assets/images/logos/recurso 4.png" alt=""></a>
       <div>
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="search" v-model="message" name="search" id="search" placeholder="Search">
