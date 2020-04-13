@@ -1,4 +1,7 @@
 <template>
+
+
+
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a href="/" class="navbar-brand v-market-logo router-link-active"><img alt="Lookhaus logo" src="../../assets/images/logos/white-small.png" class="logo"></a> 
     <button type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button> 
