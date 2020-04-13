@@ -14,7 +14,7 @@ module.exports = {
 		path: __dirname +  '../../server/public/',
 	  },
 	  devServer: {
-		contentBase: path.join(__dirname, '../../server/public/'),
+		contentBase: path.join(__dirname, 'dist'),
         compress: true,
 		port: 8080,
 		proxy: {
