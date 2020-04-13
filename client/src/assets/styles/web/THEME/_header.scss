@@ -1,16 +1,43 @@
+.logo{
+	height: 40px;
+}
+
+input[type="submit"]{
+	background: $primary-color;
+	color: $secondary-text-color;
+	border-radius: 4px;
+	padding: 0 20px;
+}
+
+.transparent{
+	background-color: transparent;
+	padding: 0 20px;
+}
+
+input[type="text"]:focus,
+input[type="submit"]:hover {
+	border-color: $primary-color;
+	box-shadow: 0 0 8px 0 $primary-color;
+	color: $secondary-text-color;
+}
+
+
+ input[type='radio']:checked:after {
+	width: 18px;
+	height: 18px;
+	border-radius: 15px;
+	top: -2px;
+	left: -1px;
+	position: relative;
+	content: '';
+	display: inline-block;
+	visibility: visible;
+	border: 2px solid white;
+	background-color: $secondary-color;
+}
+
+
 .navbar{
-	background-color: transparent !important;
-
-	.logo{
-		height: 40px;
-	}
-
-	.btn-primary{
-		background: $primary-color;
-		border-radius: 8px;
-		color: secondary-text-color;
-	}
-
 	.label{
 		color: $secondary-text-color;
 	}
@@ -18,15 +45,17 @@
 
 .img-searcher-container{
 	background-image: url("../../images/cover.jpg");
-	background-size: auto;
-	max-height: 310px;
+	background-size: cover;
+	max-height: 500px;
 	height: -webkit-fill-available;
 
 	.searcher-container {
-		max-width: 410px;
+		background-color: white;
+		width: 350px;
 
 		h2 {
 			font-size: 18px;
+			color: $primary-color;
 		}
 
 		#searcher {
@@ -39,12 +68,6 @@
 				padding: 8px;
 				box-sizing: border-box;
 				transition: 0.3s;
-			}
-
-			input[type="text"]:focus,
-			input[type="submit"]:focus {
-				border-color: $primary-color;
-				box-shadow: 0 0 8px 0 $primary-color;
 			}
 
 			.inputWithIcon input[type="text"] {

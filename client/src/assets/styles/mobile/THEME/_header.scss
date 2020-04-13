@@ -12,8 +12,8 @@
 
 .img-searcher-container{
 	background-image: url("../../images/cover.jpg");
-	background-size: auto;
-	max-height: 310px;
+	background-size: cover;
+	max-height: 500px;
 	height: -webkit-fill-available;
 
 	.searcher-container {
