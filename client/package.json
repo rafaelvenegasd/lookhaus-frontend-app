@@ -8,7 +8,7 @@
     "npm": "6.13.4"
   },
   "scripts": {
-    "dev": "concurrently --kill-others \"gulp watch\" \"webpack-dev-server --mode development --open\"",
+    "dev": "concurrently --kill-others \"gulp watch\" \"webpack-dev-server --config webpack.config.js\"",
     "postinstall": "gulp desktop && gulp mobile && webpack -p"
   },
   "keywords": [],

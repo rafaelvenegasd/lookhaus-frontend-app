@@ -11,10 +11,10 @@ module.exports = {
 	],
 	output: {
 		filename: 'bundle.js',
-		path: __dirname + '../../server/public/'
-	},
-    devServer: {
-        contentBase: __dirname +'../../server/public',
+		path: path.resolve(__dirname, '../../server/public/'),
+	  },
+	  devServer: {
+		contentBase: path.resolve(__dirname, '../../server/public/'),
         compress: true,
 		port: 8080,
 		proxy: {

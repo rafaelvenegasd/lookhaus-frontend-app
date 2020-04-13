@@ -1,13 +1,17 @@
-#navbarNav a {
-	color: $primary-color;
-}
+.navbar{
+	.logo{
+		height: 40px;
+	}
 
-#navbarNav a:hover {
-	color: $secondary-color;
-}
+	.btn-primary{
+		background: $primary-color;
+		border-radius: 8px;
+		color: secondary-text-color;
+	}
 
-.rolling-market-background {
-	background-color: $primary-color;
+	.label{
+		color: $secondary-text-color;
+	}
 }
 
 .img-searcher-container{

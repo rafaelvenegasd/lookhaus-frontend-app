@@ -1,12 +1,13 @@
 <template>
-  <nav class=" navbar navbarNav">
-      <a href="/"><img src="../../assets/images/logos/recurso 4.png" alt=""></a>
-      <div>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" v-model="message" name="search" id="search" placeholder="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit" v-on:click="search()">Go</button> 
-        </form>
-      </div>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a href="/" class="navbar-brand v-market-logo router-link-active"><img alt="Lookhaus logo" src="../../assets/images/logos/white-small.png" class="logo"></a> 
+    <button type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span class="navbar-toggler-icon"></span></button> 
+    <div id="navbarNav" class="collapse navbar-collapse justify-content-end">
+      <ul class="navbar-nav">
+        <li class="nav-item active "><a href="#" class="nav-link"><button class="btn-primary"> Post your Place </button></a></li> 
+        <li class="nav-item active label"><a href="#" class="nav-link">Log in</a></li>
+      </ul>
+    </div>
   </nav>
 </template>
 
