@@ -1,22 +1,15 @@
 const axios = require('axios');
 
-function DeviceService(backCall){
-    this.backCall = backCall;
-}
-
-DeviceService.prototype.getDevice = function (cb) {
-    axios.get(this.backCall)
+export default function getDevice(cb){
+    axios.get(`http://localhost:3000/device/`)
     .then(function (res) {
-        return cb(null, res.data);
+        cb(null, res.data);
     })
-    .catch(function(err) {
-        console.log(err);
-        return cb(err, null);
+    .catch(function (error) {
+        console.log(error);
+        cb(error, null);
     })
 }
-
-export default DeviceService;
-
 
 
 
