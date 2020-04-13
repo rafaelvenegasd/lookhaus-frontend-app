@@ -13,11 +13,11 @@ const index = require('./routes/index');
 app.use('/device', index);
 
 //Handdle Production
-if (process.env.NODE_ENV === 'production') {
+// if (process.env.NODE_ENV === 'production') {
 	app.use(express.static(__dirname + '/public/'));
 	//Handle SPA
 	app.get(/.*/, (req, res) => res.sendFile(__dirname + '/public/index.html'));
-}
+// }
 
 // Connect server
 const port = process.env.PORT || 3000;
