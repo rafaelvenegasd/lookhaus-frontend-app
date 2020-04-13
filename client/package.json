@@ -9,7 +9,7 @@
   },
   "scripts": {
     "dev": "concurrently --kill-others \"gulp watch\" \"webpack-dev-server --config webpack.config.js\"",
-    "postinstall": "gulp desktop && gulp mobile && webpack -p"
+    "postinstall": "gulp desktop && gulp mobile && webpack -p && ../ && npm run start"
   },
   "keywords": [],
   "author": "",
