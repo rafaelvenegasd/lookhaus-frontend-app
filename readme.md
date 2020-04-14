@@ -183,6 +183,51 @@ jS APP mobile vesrion must include 2 extra functionalities compared to the deskt
 - The code: WEB REST API, Laravel APP and jS APP.
 
 
+## Project setup
+|__client
+      |____node_modules
+      |____src
+      |      |____desktop
+      |      |      |____assets
+      |      |      |    |____images
+      |      |      |    |____styles
+      |      |      |        |____importer.scss(which we import to Gulp)
+      |      |      |        |____importer.scss(Gulp output)
+      |      |      |____components
+      |      |      |____routes
+      |      |      |____views
+      |      |      |____App.vue
+      |      |      |____index.js (Desktop entry point)
+      |      |____mobile
+      |             |____assets
+      |             |    |____images
+      |             |    |____styles
+      |             |        |____importer.scss(which we import to Gulp)
+      |             |        |____importer.scss(Gulp output)
+      |             |____components
+      |             |____routes
+      |             |____views
+      |             |____App.vue
+      |             |____index.js (Desktop entry point)
+      |____.babelrc
+      |____gulpfile.js
+      |____index.html
+      |____package-lock.json
+      |____package.json
+      |____webpack.config.js
+|__server
+      |____public (webpack/gulp output --> This is what Heroku serves statically)
+      |____index.js (server setup with device detection)
+
+node_modules
+.env
+.gitignore
+package-lock.json
+package.json
+Procfile
+readme.md
+
+
 ## Links that helped us developing this project
 
 ## Authors

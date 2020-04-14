@@ -8,11 +8,11 @@ const Dotenv = require('dotenv-webpack');
 module.exports = {
     mode: 'development',
     entry: {
-		'desktop/index':'./src/desktop/index.js',
-		'mobile/index':'./src/mobile/index.js'
+		'desktop':'./src/desktop/index.js',
+		'mobile':'./src/mobile/index.js'
 	},
 	output: {
-		filename: '[name].[hash].js',
+		filename: '[name]/bundle.js',
 		chunkFilename: 'chunk.[hash].js',
 		path: path.resolve(__dirname, '../server/public/')
 	},
@@ -57,16 +57,16 @@ module.exports = {
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new VueLoaderPlugin(),
-        new HtmlWebpackPlugin({
-            template: './index.html',
-            filename: 'desktop/index.html',
-            inject: true
-		}),
-        new HtmlWebpackPlugin({
-            template: './index.html',
-            filename: 'mobile/index.html',
-            inject: true
-		})
+        // new HtmlWebpackPlugin({
+        //     template: './index.html',
+        //     filename: 'desktop/index.html',
+        //     inject: true
+		// }),
+        // new HtmlWebpackPlugin({
+        //     template: './index.html',
+        //     filename: 'mobile/index.html',
+        //     inject: true
+		// })
 
 		// new Dotenv({})
 		// new webpack.DefinePlugin({
