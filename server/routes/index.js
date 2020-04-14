@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const path = require('path');
 
 // Router
 router.get('/', (req, res) => {
@@ -10,10 +11,10 @@ router.get('/', (req, res) => {
     const device = detector.device.type; 
 
     if (device == 'desktop'){
-      return res.json('desktop');
+      res.sendFile(__dirname +  '../public/desktop/index.html');
     }
     else{
-      return res.json('mobile');
+		res.sendFile(__dirname + '/public/mobile/index.html');
     }
 });
 
