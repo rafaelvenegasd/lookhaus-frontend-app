@@ -1,19 +1,19 @@
 <template>
   <div>
-    <Navbar></Navbar>
+    <Header></Header>
       <router-view/>
     <Footer></Footer>
   </div>
 </template>
 
 <script>
-import  Navbar  from "./components/web/navbar.vue";
+import  Header  from "./components/web/header.vue";
 import  Footer  from "./components/web/footer.vue";
 
 export default {
     name: "AppDesktop", 
     components:{
-      Navbar, 
+      Header, 
       Footer
    }
 }
