@@ -15,15 +15,11 @@ module.exports = {
 		filename: '[name].[hash].js',
 		chunkFilename: 'chunk.[hash].js',
 		path: path.resolve(__dirname, '../server/public/')
-	  },
-	  devServer: {
-		contentBase: path.join(__dirname, 'dist'),
-        compress: true,
-		port: 8080,
-		proxy: {
-			'/':'http://localhost:3000/'
-		}
-    },
+	},
+	devServer: { writeToDisk: true },
+	//   devServer: {
+	// 	contentBase: path.join(__dirname, '../server/public/'),
+    // },
     module: {
         rules: [
 			{
