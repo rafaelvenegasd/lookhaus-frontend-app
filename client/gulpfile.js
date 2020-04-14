@@ -3,12 +3,18 @@ const sass = require("gulp-sass");
 const minify = require('gulp-minify');
 const notify = require( 'gulp-notify' );
 
-function copy(){
+function copymobile(){
 	return(
 		gulp
-		.src("./src/index.html")
-		.pipe(gulp.dest("../server/public/desktop"))
+		.src("./src/mobile/index.html")
 		.pipe(gulp.dest("../server/public/mobile"))
+	)
+}
+function copydesktop(){
+	return(
+		gulp
+		.src("./src/desktop/index.html")
+		.pipe(gulp.dest("../server/public/desktop"))
 	)
 }
 
@@ -41,7 +47,8 @@ function watch() {
 
 function build(){
 	return(
-		copy(),
+		copymobile(),
+		copydesktop(),
 		mobile(),
 		desktop()
 	)
@@ -49,7 +56,8 @@ function build(){
 
 function dev(){
 	return(
-		copy(),
+		copymobile(),
+		copydesktop(),
 		mobile(),
 		desktop(),
 		watch()
@@ -57,7 +65,8 @@ function dev(){
 }
 
 exports.desktop = desktop;
-exports.copy = copy;
+exports.copymobile = copymobile;
+exports.copydesktop = copydesktop;
 exports.mobile = mobile;
 exports.watch = watch;
 exports.build = build;
