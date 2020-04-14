@@ -2,6 +2,10 @@
 	height: 40px;
 }
 
+.small-figure{
+	height: 20px;
+}
+
 input[type="submit"]{
 	background: $primary-color;
 	color: $secondary-text-color;
@@ -36,11 +40,17 @@ input[type="submit"]:hover {
 	background-color: $secondary-color;
 }
 
-
 .navbar{
 	.label{
 		color: $secondary-text-color;
 	}
+}
+
+header{
+	background: transparent;
+  	width: 100%;
+  	position: absolute;
+	z-index: 100;
 }
 
 .img-searcher-container{

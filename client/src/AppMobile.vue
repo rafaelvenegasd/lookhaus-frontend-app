@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!-- <Navbar></Navbar> -->
+    <!-- <Header></Header> -->
     <div>
       <router-view/>
     </div>
@@ -9,13 +9,13 @@
 </template>
 
 <script>
-// import  Navbar  from "./components/web/navbar";
-// import  Footer  from "./components/web/footer";
+// import  Header  from "./components/web/header.vue";
+// import  Footer  from "./components/web/footer.vue";
 
 export default {
     name: "AppMobile", 
   //   components:{
-  //     Navbar, 
+  //     Header, 
   //     Footer
   //  }
 }
