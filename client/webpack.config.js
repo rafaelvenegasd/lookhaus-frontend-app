@@ -3,24 +3,23 @@ const webpack = require('webpack')
 const {VueLoaderPlugin} = require('vue-loader')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const Dotenv = require('dotenv-webpack');
-require("babel-polyfill");
+// require("babel-polyfill");
+
 module.exports = {
     mode: 'development',
-    entry: [
-        'babel-polyfill','./src/index.js'
-	],
+    entry: {
+		'desktop/index':'./src/desktop/index.js',
+		'mobile/index':'./src/mobile/index.js'
+	},
 	output: {
-		filename: 'bundle.js',
-		path: path.resolve(__dirname, '../../server/public/'),
-	  },
-	  devServer: {
-		contentBase: path.resolve(__dirname, '../../server/public/'),
-        compress: true,
-		port: 8080,
-		proxy: {
-			'/device':'http://localhost:3000/'
-		}
-    },
+		filename: '[name].[hash].js',
+		chunkFilename: 'chunk.[hash].js',
+		path: path.resolve(__dirname, '../server/public/')
+	},
+	devServer: { writeToDisk: true },
+	//   devServer: {
+	// 	contentBase: path.join(__dirname, '../server/public/'),
+    // },
     module: {
         rules: [
 			{
@@ -49,14 +48,32 @@ module.exports = {
 			},
 		]
 	},
+	optimization: {
+		splitChunks: {
+			name: 'desktop/index',
+			minChunks: 2,  
+		},
+		splitChunks: {
+			name: 'mobile/index',
+			minChunks: 2,  
+		}
+	},
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new VueLoaderPlugin(),
         new HtmlWebpackPlugin({
-            filename: 'index.html',
-            template: 'index.html',
+            template: './index.html',
+			filename: 'desktop/index.html',
+			chunks: ['desktop/index'],
             inject: true
 		}),
+        new HtmlWebpackPlugin({
+            template: './index.html',
+			filename: 'mobile/index.html',
+			chunks: ['mobile/index'],
+            inject: true
+		})
+
 		// new Dotenv({})
 		// new webpack.DefinePlugin({
 		// 	'process.env': {
