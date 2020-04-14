@@ -8,11 +8,11 @@ const Dotenv = require('dotenv-webpack');
 module.exports = {
     mode: 'development',
     entry: {
-		'desktop/index':'./src/desktop/index.js',
-		'mobile/index':'./src/mobile/index.js'
+		'desktop':'./src/desktop/index.js',
+		'mobile':'./src/mobile/index.js'
 	},
 	output: {
-		filename: '[name].[hash].js',
+		filename: '[name]/bundle.js',
 		chunkFilename: 'chunk.[hash].js',
 		path: path.resolve(__dirname, '../server/public/')
 	},
@@ -51,28 +51,22 @@ module.exports = {
 	optimization: {
 		splitChunks: {
 			name: 'desktop/index',
-			minChunks: 2,  
-		},
-		splitChunks: {
-			name: 'mobile/index',
-			minChunks: 2,  
+			minChunks: 2
 		}
 	},
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new VueLoaderPlugin(),
-        new HtmlWebpackPlugin({
-            template: './index.html',
-			filename: 'desktop/index.html',
-			chunks: ['desktop/index'],
-            inject: true
-		}),
-        new HtmlWebpackPlugin({
-            template: './index.html',
-			filename: 'mobile/index.html',
-			chunks: ['mobile/index'],
-            inject: true
-		})
+        // new HtmlWebpackPlugin({
+        //     template: './index.html',
+        //     filename: 'desktop/index.html',
+        //     inject: true
+		// }),
+        // new HtmlWebpackPlugin({
+        //     template: './index.html',
+        //     filename: 'mobile/index.html',
+        //     inject: true
+		// })
 
 		// new Dotenv({})
 		// new webpack.DefinePlugin({
