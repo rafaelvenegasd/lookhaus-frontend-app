@@ -4,8 +4,60 @@
     font-size: small;
 }
 
-
 $primary-color: #631E1E;
 $secondary-color: #A97E3D;
 $primary-text-color: black;
 $secondary-text-color: white;
+
+.logo{
+	height: 40px;
+}
+
+.logo-h{
+	display: grid;
+}
+
+.small-figure{
+	height: 20px;
+}
+
+input[type="submit"]{
+	background: $primary-color;
+	color: $secondary-text-color;
+	border-radius: 4px;
+	padding: 0 20px;
+}
+
+.transparent{
+	background-color: transparent;
+	padding: 0 20px;
+}
+
+input[type="text"]:focus,
+input[type="submit"]:hover {
+	border-color: $primary-color;
+	box-shadow: 0 0 8px 0 $primary-color;
+	color: $secondary-text-color;
+}
+
+
+ input[type='radio']:checked:after {
+	width: 18px;
+	height: 18px;
+	border-radius: 15px;
+	top: -2px;
+	left: -1px;
+	position: relative;
+	content: '';
+	display: inline-block;
+	visibility: visible;
+	border: 2px solid white;
+	background-color: $secondary-color;
+}
+
+li{
+    list-style: none;
+}
+
+
+
