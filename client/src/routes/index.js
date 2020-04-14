@@ -16,12 +16,12 @@ getDevice((err, data) =>{
         if( data == 'desktop'){
             var routes = [{path: '/', name: "DesktopHome", component: DesktopHome }, {path: '/login', name: "DesktopLogin", component: DesktopLogin }];
             Vue.use(VueRouter);
-            const router = new VueRouter({mode: 'history', routes: routes})
+            const router = new VueRouter({mode: 'history', routes})
             new Vue({ el: '#app', router, render: h => h(AppDesktop)})
         }else{
             var routes = [{ path: '/', name: "MobileHome", component: MobileHome }];
             Vue.use(VueRouter);
-            const router = new VueRouter({mode: 'history', routes: routes})
+            const router = new VueRouter({mode: 'history', routes})
             new Vue({ el: '#app', router, render: h => h(AppMobile)})
         }
     }
