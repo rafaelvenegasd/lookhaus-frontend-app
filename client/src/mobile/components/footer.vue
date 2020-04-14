@@ -9,7 +9,6 @@
       </div>
     <div class="footer text-center py-2 ">
         <span href="#" class="white"> Made with ♥ by Prattya Data | Rafael Venegas | Diego Arturo Silva | Cristina Moreno </span> 2020
-        <h1>changed</h1>
     </div>
     </footer>
 </template>
