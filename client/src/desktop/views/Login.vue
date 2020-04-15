@@ -9,7 +9,7 @@
         <p>Join the community of ownwers and enjoy a fully equiped
           platform to post your properties!
         </p>
-        <button class="btn transparent label">Create an account</button>
+        <input type="submit" class="btn" value="Create an account">
       </div>
       <div class="">
         <form action="" class="d-flex flex-column container mb-3">

@@ -7,7 +7,7 @@
       <ul class="row navbar">
         <li><a href="#" class="nav-link"><input type="submit" class="btn" value="Post your Place"></a></li> 
         <router-link tag="li" to="/login" exact>
-          <a class="nav-link"><button class="btn transparent label">Login</button></a>
+          <a class="nav-link">Login</a>
         </router-link>
       </ul>
   </nav>

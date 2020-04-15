@@ -38,8 +38,8 @@ function mobile() {
 }
 
 function watch() {
-		gulp.watch("./src/desktop/assets/styles/**/*.scss", gulp.series('desktop'))
-		gulp.watch("./src/mobile/assets/styles/**/*.scss", gulp.series('mobile'))
+		gulp.watch("./src/desktop/assets/styles/**/*.scss", desktop)
+		gulp.watch("./src/mobile/assets/styles/**/*.scss", mobile)
 		gulp.watch("./src/desktop/assets/styles/**/*.scss")
 		gulp.watch("./src/mobile/assets/styles/**/*.scss")
 }
