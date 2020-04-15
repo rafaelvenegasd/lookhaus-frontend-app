@@ -27,15 +27,14 @@
 //     }
 //   });
 
-
-
-
-
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Login from '../views/Login.vue'
-import Register from '../views/Register.vue'
+import Signup from '../views/Signup.vue'
+import Offices from '../views/Offices.vue'
+import Houses from '../views/Houses.vue'
+import Detail from '../views/Detail.vue'
 
 
 Vue.use(VueRouter)
@@ -47,14 +46,29 @@ const routes = [
     component: Home
   },
   {
-    path: '/login',
+    path: '/log-in',
     name: 'Login',
     component: Login
   },
   {
-    path: '/register',
-    name: 'Register',
-    component: Register
+    path: '/sign-up',
+    name: 'Signup',
+    component: Signup
+  },
+  {
+    path: '/offices',
+    name: 'Offices',
+    component: Offices
+  },
+  {
+    path: '/homes',
+    name: 'Houses',
+    component: Houses
+  },
+  {
+    path: '/property-detail',
+    name: 'Detail',
+    component: Detail
   }
 ]
 

@@ -3,6 +3,7 @@ import axios from 'axios';
 import router from './routes/index'
 import './assets/styles/importer.css';
 import VuePaginate from 'vue-paginate'
+import 'bootstrap'
 import App from './App.vue'
 
 Vue.use(VuePaginate);

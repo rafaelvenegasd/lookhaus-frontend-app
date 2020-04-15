@@ -2,14 +2,17 @@
   <div class="container ">
     <div class="d-flex justify-content-between "> 
       <div class="content-big-box">
+      <div class="content-big-box">
         <h4>Already have an accout?</h4>
         <p>Join the community of ownwers and enjoy a fully equiped
           platform to post your properties!
         </p>
-        <router-link tag="li" to="/login" exact>
+        <router-link tag="li" to="/log-in" exact>
             <input type="submit" class="btn" value="Log in">
         </router-link>
       </div>
+      </div>
+      <div class="content-big-box">
       <div class="content-big-box">
         <form action="" class="d-flex flex-column container mb-3">
           <h4 class="mb-4">Create an account </h4>
@@ -34,6 +37,7 @@
           <input type="submit" value="Create your account">
         </form>
       </div>
+      </div>
     </div>
   </div>
 </template>
@@ -41,6 +45,6 @@
 <script>
 
 export default {
-  name: 'Register',
+  name: 'Signup',
 }
 </script>

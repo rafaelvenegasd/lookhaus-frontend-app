@@ -4,6 +4,10 @@
 	font-size: small;
 }
 
+ul{
+	padding-left: initial;
+}
+
 $primary-color: #631E1E;
 $secondary-color: #A97E3D;
 $primary-text-color: black;
@@ -22,8 +26,22 @@ $secondary-text-color: white;
 }
 
 .content-big-box{
-	margin-top: 200px;
+	margin-top: 100px;
 	margin-bottom: 50px;
+}
+
+.second-color{
+	background: $secondary-color;
+	color: $secondary-text-color;
+	font-weight: bold;
+	width: auto;
+	float: left;
+	right: 10px;
+	position: absolute;
+	top: 10px;
+
+	border-radius: 4px;
+	padding: 8px 20px;
 }
 
 input[type="submit"]{
