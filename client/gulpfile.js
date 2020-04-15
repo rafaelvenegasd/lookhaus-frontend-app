@@ -38,11 +38,10 @@ function mobile() {
 }
 
 function watch() {
-	gulp
-		.watch("./src/desktop/assets/styles/**/*.scss", desktop)
-		.watch("./src/mobile/assets/styles/**/*.scss", mobile)
-		.watch("./src/desktop/assets/styles/**/*.scss")
-		.watch("./src/mobile/assets/styles/**/*.scss")
+		gulp.watch("./src/desktop/assets/styles/**/*.scss", gulp.series('desktop'))
+		gulp.watch("./src/mobile/assets/styles/**/*.scss", gulp.series('mobile'))
+		gulp.watch("./src/desktop/assets/styles/**/*.scss")
+		gulp.watch("./src/mobile/assets/styles/**/*.scss")
 }
 
 function build(){
