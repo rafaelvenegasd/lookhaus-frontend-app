@@ -9,12 +9,8 @@ router.get(/.*/, (req, res) => {
 	const userAgent = req.headers["user-agent"];
 	const detector = deviceDetector.parse(userAgent);
 	const device = detector.device.type;
-
-	if (device == 'desktop'){
-		res.sendFile(__dirname + '/public/desktop/index.html');
-	}else{
-		res.sendFile(__dirname + '/public/mobile/index.html');
-	}});
+	res.sendFile(`${__dirname} + '/public/${device}/index.html`);
+});
 
 module.exports = router;
 
