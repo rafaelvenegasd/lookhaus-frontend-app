@@ -104,7 +104,7 @@
             <div class="content-big-box">
                 <div class="card" style="width: 18rem;">
                     <figure class="d-flex text-right m-0">
-                        <button class="second-color">○ Bargain</button>
+                          <button class="btn floating" disabled>○ Bargain</button>
                         <img class="card-img-top" src="../assets/images/cover2.jpg" alt="House Image">  
                     </figure>
                     <div class="card-body">
