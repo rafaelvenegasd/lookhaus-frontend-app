@@ -136,8 +136,13 @@
 </template>
 
 <script>
-
+import EventBus from '../../event-bus'
 export default {
   name: 'Offices',
+  mounted() {
+      EventBus.$on('searching', message =>{
+          console.log(message);
+      })
+  }
 }
 </script>

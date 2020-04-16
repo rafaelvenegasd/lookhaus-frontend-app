@@ -9,13 +9,15 @@
           </div>
           <div class="d-flex justify-content-center align-items-center flex-column container">
             <div>
-              <input type="radio" name="place" id="live" class="mr-2 btn-radio" checked><label for="place" class="mr-3">Place to live</label>
-              <input type="radio" name="place" id="work" class="mr-2 btn-radio"><label for="place">Place to work / Office</label>
+              <input type="radio" name="place" id="live" class="mr-2 btn-radio" v-model="selected" value="homes"><label for="place" class="mr-3">Place to live</label>
+              <input type="radio" name="place" id="work" class="mr-2 btn-radio" v-model="selected" value="offices"><label for="place">Place to work / Office</label>
             </div>
           </div>
           <div id="searcher" class="d-flex justify-content-center align-items-center flex-column container mb-4">
-              <input type="text" placeholder="Type city, town, etc." class="col-form-label-sm">
-              <input type="submit" value="Search" class="btn">
+              <input type="text" placeholder="Type city, town, etc." class="col-form-label-sm" v-model="message">
+              <router-link tag="li" :to="selected" exact>
+                <input type="submit" value="Search" class="btn" v-on:click="search()">
+              </router-link>
           </div>
         </div>
       </div>
@@ -36,8 +38,12 @@
             <small>Where your future home is</small>
           </div>
           <p class="mb-4">Half-giant jinxes peg-leg gillywater broken glasses large black dog Great Hall. Nearly-Headless Nick now string them together, and answer me this, which creature would you be unwilling to kiss? Poltergeist sticking charm, troll umbrella stand flying cars golden locket Lily Potter. Pumpkin juice Trevor wave your wand out glass orbs, a Grim knitted hats. Stan Shunpike doe patronus, suck his soul Muggle-Born large order of drills the trace. Bred in captivity fell through the veil, quaffle blue flame ickle diddykins Aragog. Yer a wizard, Harry Doxycide the woes of Mrs. Weasley Goblet of Fire.</p>
-          <input type="submit" class="btn mr-2" value="Create your account">
-          <input type="submit" class="btn" value="Log in to an existent account">
+          <router-link tag="li" to="/sign-up" exact>
+            <input type="submit" class="btn mr-2" value="Create your account">
+          </router-link>
+          <router-link tag="li" to="/log-in" exact>
+            <input type="submit" class="btn" value="Log in to an existent account">
+          </router-link>
         </div>
       </div> 
     </div>
@@ -45,28 +51,27 @@
 </template>
 
 <script>
-// import EventBus from '../assets/js/event-bus'
-// import {getDetails} from '../assets/js/axios-service'
+import EventBus from '../../event-bus'
+import {getProperties} from '../../axios-service'
 export default {
   name: 'Home',
   data() {
       return {
-          message: '', 
-          id: ''
+          message: '',
+          selected: ''  
       }
     },
     methods:{
         search(){
-          // getDetails(this.message, (err, data) =>{
-          //       if(err){
-          //           console.error(err)
-          //       } 
-          //       else{
-          //           this.id = data[0].item_id;
-          //           EventBus.$emit('searching', this.message);
-          //           EventBus.$emit('chart', this.id);
-          //       }
-          //   })
+          getProperties(this.selected, (err, data) =>{
+                if(err){
+                    console.error(err)
+                } 
+                else{
+                    console.log(data);
+                    EventBus.$emit('searching', this.message);
+                }
+            })
 
         }
     }

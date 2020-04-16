@@ -12,8 +12,8 @@ export function getContentFromApi(cb){
   })
 }
 
-export function getDetails(cb){
-  axios.get(``)
+export function getProperties(type, cb){
+  axios.get(`http://property-search-json-server.herokuapp.com/` + type)
   .then(function (res) {
       cb(null, res.data);
   })
