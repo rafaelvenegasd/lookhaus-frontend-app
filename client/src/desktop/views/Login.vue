@@ -28,7 +28,13 @@
             </div>
             <input type="password" class="form-control" placeholder="Type your password" aria-label="Email" aria-describedby="basic-addon1">
           </div>
-          <input type="submit" value="Log in to an existent account">
+          <!-- <div class="d-flex justify-content-center align-items-center flex-column container">
+            <div>
+              <input type="radio" name="place" id="live" class="mr-2 btn-radio" v-model="user" value="admin"><label for="place" class="mr-3">Admin</label>
+              <input type="radio" name="place" id="work" class="mr-2 btn-radio" v-model="user" value="user"><label for="place">Regular User</label>
+            </div>
+          </div> -->
+          <input type="submit" value="Log in to an existent account" v-on:click="login()">
         </form>
       </div>
       </div>
@@ -40,5 +46,12 @@
 
 export default {
   name: 'Login',
+  data:{
+    user: '',
+  }, 
+  methods:{
+    login(){
+    }
+  }
 }
 </script>

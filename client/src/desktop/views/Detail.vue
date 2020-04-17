@@ -61,15 +61,33 @@
           </div>
         </form>
         <div class="d-flex justify-content-end">
-            <input type="submit" width="50px" value="Reach the owner">
+          <div class="w-50">
+            <input type="submit" width="50px" value="Reach the owner" v-on:click="reachOwner()">
+          </div>
         </div>
     </div>
     </div>
 </template>
 
 <script>
+import Swal from 'sweetalert2'
+import EventBus from '../../event-bus'
 
 export default {
   name: 'Login',
+  mounted() {
+      EventBus.$on('checkItOut', data =>{
+          console.log(data);
+      })
+  }, 
+  methods:{
+    reachOwner(){
+      Swal.fire(
+        'Message sended!',
+        'The owner will contact to you soon!',
+        'success'
+      )
+    }
+  }
 }
 </script>

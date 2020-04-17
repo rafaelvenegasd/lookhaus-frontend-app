@@ -1,10 +1,10 @@
 
 const axios = require('axios');
 
-export function getContentFromApi(cb){
-  axios.get(``)
+export function getProperties(type, cb){
+  axios.get(`https://lookhaus-api.herokuapp.com/` + type + `?kind=flat`)
   .then(function (res) {
-    cb(null, res.data);
+      cb(null, res.data);
   })
   .catch(function (error) {
       console.log(error);
@@ -12,8 +12,8 @@ export function getContentFromApi(cb){
   })
 }
 
-export function getProperties(type, cb){
-  axios.get(`http://property-search-json-server.herokuapp.com/` + type)
+export function getPropertiesById(type, id, cb){
+  axios.get(`https://lookhaus-api.herokuapp.com/`+ type + `/` + id)
   .then(function (res) {
       cb(null, res.data);
   })

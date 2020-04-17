@@ -16,7 +16,7 @@
 
             <div class="d-flex justify-content-between">
                 <div>
-                    <button type="submit" class="btn transparent-btn mb-4"> Upload photos </button>
+                    <input type="file" value="Upload photos" multiple class="btn transparent-btn mb-4" @change="onFileSelected" accept="image/png, image/jpeg">
                     <div class="d-flex mb-4">
                         <img alt="Lookhaus logo" src="../../assets/images/logos/black-small.png" class="logo mr-4">
                         <img alt="Lookhaus logo" src="../../assets/images/logos/black-small.png" class="logo mr-4">
@@ -106,6 +106,11 @@
 <script>
 export default {
     name: 'Create',
+    methods:{
+        onFileSelected(event){
+            console.log(event);
+        }
+    }
 }
 </script>
 

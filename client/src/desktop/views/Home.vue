@@ -74,7 +74,6 @@ export default {
                     EventBus.$emit('searching', this.message);
                 }
             })
-
         }
     }
 }

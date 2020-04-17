@@ -83,7 +83,7 @@
                                 <router-link tag="li" to="/update-property" exact>
                                     <input type="submit" class="btn mb-2" value="Edit Property">
                                 </router-link>
-                                <button type="submit" class="btn transparent-btn mb-4"> Delete Property </button>
+                                <button type="submit" class="btn transparent-btn mb-4" v-on:click="deleteProperty"> Delete Property </button>
                             </li>
                         </ul>
                     </div>
@@ -106,8 +106,47 @@
 </template>
 
 <script>
+import Swal from 'sweetalert2'
+
 export default {
     name: 'Profile',
+    methods:{
+        deleteProperty(){
+            const swalWithBootstrapButtons = Swal.mixin({
+                customClass: {
+                    confirmButton: 'btn btn-success',
+                    cancelButton: 'btn btn-danger'
+                },
+                buttonsStyling: false
+                })
+
+                swalWithBootstrapButtons.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonText: 'Yes, delete it!',
+                cancelButtonText: 'No, cancel!',
+                reverseButtons: true
+                }).then((result) => {
+                if (result.value) {
+                    swalWithBootstrapButtons.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                    )
+                } else if (
+                    result.dismiss === Swal.DismissReason.cancel
+                ) {
+                    swalWithBootstrapButtons.fire(
+                    'Cancelled',
+                    'Your imaginary file is safe :)',
+                    'error'
+                    )
+                }
+            })
+        }
+    }
 }
 </script>
 
