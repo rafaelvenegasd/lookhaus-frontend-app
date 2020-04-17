@@ -35,6 +35,9 @@ import Signup from '../views/Signup.vue'
 import Offices from '../views/Offices.vue'
 import Houses from '../views/Houses.vue'
 import Detail from '../views/Detail.vue'
+import Create from '../views/user-profile/Create.vue'
+import Update from '../views/user-profile/Update.vue'
+import Profile from '../views/user-profile/Profile.vue'
 
 
 Vue.use(VueRouter)
@@ -64,6 +67,21 @@ const routes = [
     path: '/homes',
     name: 'Houses',
     component: Houses
+  },
+  {
+    path: '/create-property',
+    name: 'Create',
+    component: Create
+  },
+  {
+    path: '/update-property',
+    name: 'Update',
+    component: Update
+  },
+  {
+    path: '/user-profile',
+    name: 'Profile',
+    component: Profile
   },
   {
     path: '/property-detail',

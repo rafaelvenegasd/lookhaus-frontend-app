@@ -42,6 +42,11 @@ $secondary-text-color: white;
 	top: 10px;
 }
 
+.d-grid{
+	display: grid;
+	justify-items: center;
+}
+
 .btn:disabled, .btn:disabled:hover{
 	background: $secondary-color;
 	color: $secondary-text-color;
@@ -55,11 +60,14 @@ input[type="submit"]{
 	color: $secondary-text-color;
 	border-radius: 4px;
 	padding: 8px 20px;
+	width: -webkit-fill-available;
 }
 
-.transparent{
+.transparent-btn{
 	background-color: transparent;
+	border: 1px solid $secondary-color;
 	padding: 0 20px;
+	width: -webkit-fill-available;
 }
 
 input[type="submit"]:hover {

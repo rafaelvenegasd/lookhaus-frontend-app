@@ -38,12 +38,14 @@
             <small>Where your future home is</small>
           </div>
           <p class="mb-4">Half-giant jinxes peg-leg gillywater broken glasses large black dog Great Hall. Nearly-Headless Nick now string them together, and answer me this, which creature would you be unwilling to kiss? Poltergeist sticking charm, troll umbrella stand flying cars golden locket Lily Potter. Pumpkin juice Trevor wave your wand out glass orbs, a Grim knitted hats. Stan Shunpike doe patronus, suck his soul Muggle-Born large order of drills the trace. Bred in captivity fell through the veil, quaffle blue flame ickle diddykins Aragog. Yer a wizard, Harry Doxycide the woes of Mrs. Weasley Goblet of Fire.</p>
-          <router-link tag="li" to="/sign-up" exact>
-            <input type="submit" class="btn mr-2" value="Create your account">
-          </router-link>
-          <router-link tag="li" to="/log-in" exact>
-            <input type="submit" class="btn" value="Log in to an existent account">
-          </router-link>
+          <div class="d-flex">
+            <router-link tag="li" to="/sign-up" exact>
+              <input type="submit" class="btn mr-2" value="Create your account">
+            </router-link>
+            <router-link tag="li" to="/log-in" exact>
+              <input type="submit" class="btn" value="Log in to an existent account">
+            </router-link>
+          </div>
         </div>
       </div> 
     </div>

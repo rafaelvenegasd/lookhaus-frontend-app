@@ -5,10 +5,13 @@
       <a class="navbar-brand v-market-logo router-link-active"><img alt="Lookhaus logo" src="../assets/images/logos/black-small.png" class="logo"></a> 
     </router-link>
       <ul class="row navbar">
-        <li><a href="#" class="nav-link"><input type="submit" class="btn" value="Post your Place"></a></li> 
-        <router-link tag="li" to="/log-in" exact>
+        <li><router-link tag="li" to="/create-property" exact>
+          <a href="#" class="nav-link"><input type="submit" class="btn" value="Post your Place"></a>
+        </router-link></li>
+        
+        <li><router-link tag="li" to="/log-in" exact>
           <a class="nav-link">Login</a>
-        </router-link>
+        </router-link></li>
       </ul>
   </nav>
 </header>
