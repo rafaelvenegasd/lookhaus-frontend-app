@@ -12,6 +12,12 @@
         <li><router-link tag="li" to="/log-in" exact>
           <a class="nav-link">Login</a>
         </router-link></li>
+
+        <!-- TESTING: Eventually it will be deleted -->
+        <li><router-link tag="li" to="/user-profile" exact>
+          <a class="nav-link">User</a>
+        </router-link></li>
+
       </ul>
   </nav>
 </header>
