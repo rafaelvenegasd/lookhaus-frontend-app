@@ -55,6 +55,7 @@
 <script>
 import EventBus from '../../event-bus'
 import {getProperties} from '../../axios-service'
+
 export default {
   name: 'Home',
   data() {
@@ -70,11 +71,11 @@ export default {
                     console.error(err)
                 } 
                 else{
-                    console.log(data);
-                    EventBus.$emit('searching', this.message);
+                    EventBus.$emit('searching', data);
                 }
             })
         }
     }
 }
 </script>
+
