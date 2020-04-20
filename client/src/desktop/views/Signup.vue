@@ -58,7 +58,7 @@ export default {
     methods:{
         postData(){
           this.params = {
-            "name": this.name, 
+            "username": this.name, 
             "email": this.email, 
             "password": this.password, 
           }

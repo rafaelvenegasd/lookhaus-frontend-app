@@ -28,6 +28,7 @@ export function getPropertiesById(type, id, cb){
 export function signupUser(params, cb){
   axios.post(base_url + `signup/users`, params)
   .then(function (res) {
+      console.log(res.data);
       cb(null, res.data);
   })
   .catch(function (error) {
@@ -39,6 +40,7 @@ export function signupUser(params, cb){
 export function loginUser(params, cb){
   axios.post(base_url + `login/users`, params)
   .then(function (res) {
+      console.log(res.data);
       cb(null, res.data);
   })
   .catch(function (error) {

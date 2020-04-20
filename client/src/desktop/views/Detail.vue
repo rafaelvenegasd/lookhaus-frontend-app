@@ -26,7 +26,7 @@
     </div>
     <div class="mt-2 d-flex">
         <div class="mr-4">
-            <img src="../assets/images/maps.jpg"  width="220px" alt="maps">
+            <Maps></Maps>
         </div>
         <div>
             <h5>Details</h5>
@@ -72,9 +72,13 @@
 <script>
 import Swal from 'sweetalert2'
 import EventBus from '../../event-bus'
+import Maps from '../components/maps.vue'
 
 export default {
   name: 'Login',
+  components:{
+    Maps
+  },
   mounted() {
       EventBus.$on('checkItOut', data =>{
           console.log(data);
