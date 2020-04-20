@@ -62,6 +62,7 @@ export default {
             "email": this.email, 
             "password": this.password, 
           }
+
           event.preventDefault()
           console.log(this.params);
           signupUser(this.params, (err, data) =>{

@@ -20,13 +20,13 @@
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">Email</span>
             </div>
-            <input type="email" class="form-control" placeholder="Type your email" aria-label="Email" aria-describedby="basic-addon1">
+            <input type="email" class="form-control" v-model="email" placeholder="Type your email" aria-label="Email" aria-describedby="basic-addon1">
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">Password</span>
             </div>
-            <input type="password" class="form-control" placeholder="Type your password" aria-label="Email" aria-describedby="basic-addon1">
+            <input type="password" class="form-control" v-model="password" placeholder="Type your password" aria-label="Email" aria-describedby="basic-addon1">
           </div>
           <!-- <div class="d-flex justify-content-center align-items-center flex-column container">
             <div>
@@ -43,15 +43,34 @@
 </template>
 
 <script>
+import {loginUser} from '../../axios-service'
 
 export default {
   name: 'Login',
-  data:{
-    user: '',
-  }, 
-  methods:{
-    login(){
+    data() {
+      return {
+          email: '',   
+          password: '', 
+          params: {}
+      }
+    },
+    methods:{
+        login(){
+          this.params = {
+            "email": this.email, 
+            "password": this.password, 
+          }
+          event.preventDefault()
+          console.log(this.params);
+          loginUser(this.params, (err, data) =>{
+                if(err){
+                    console.error(err)
+                } 
+                else{
+                    console.log(this.params);
+                }
+            })
+        }
     }
-  }
 }
 </script>
