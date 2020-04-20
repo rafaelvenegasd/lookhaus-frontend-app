@@ -1,10 +1,11 @@
 
 const axios = require('axios');
 const base_url = 'https://lookhaus-api.herokuapp.com/'
+const pagination = "page='5'"
 
 
 export function getProperties(type, cb){
-  axios.get(base_url + type )
+  axios.get(base_url + type)
   .then(function (res) {
       cb(null, res.data);
   })

@@ -9,14 +9,14 @@
           </div>
           <div class="d-flex justify-content-center align-items-center flex-column container">
             <div>
-              <input type="radio" name="place" id="live" class="mr-2 btn-radio" v-model="selected" value="homes"><label for="place" class="mr-3">Place to live</label>
-              <input type="radio" name="place" id="work" class="mr-2 btn-radio" v-model="selected" value="offices"><label for="place">Place to work / Office</label>
+              <input type="radio" name="place" id="live" class="mr-2 btn-radio" v-model="selected" value="homes" checked><label for="live" class="mr-3">Place to live</label>
+              <input type="radio" name="place" id="work" class="mr-2 btn-radio" v-model="selected" value="offices"><label for="work">Place to work / Office</label>
             </div>
           </div>
           <div id="searcher" class="d-flex justify-content-center align-items-center flex-column container mb-4">
-              <input type="text" placeholder="Type city, town, etc." class="col-form-label-sm" v-model="message">
+              <!-- <input type="text" placeholder="Type city, town, etc." class="col-form-label-sm" v-model="message"> -->
               <router-link tag="li" :to="selected" exact>
-                <input type="submit" value="Search" class="btn" v-on:click="search()">
+                <input type="submit" value="Search" class="btn mt-2" v-on:click="search()">
               </router-link>
           </div>
         </div>

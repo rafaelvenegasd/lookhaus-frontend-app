@@ -7,9 +7,14 @@
         <p>Join the community of ownwers and enjoy a fully equiped
           platform to post your properties!
         </p>
-        <router-link tag="li" to="/sign-up" exact>
-          <input type="submit" class="btn" value="Create an account">
-        </router-link>
+        <div class="d-flex">
+          <div class="w-50">
+            <router-link tag="li" to="/sign-up" exact>
+              <input type="submit" class="btn" value="Create an account">
+            </router-link>
+          </div>
+        </div>
+
       </div>
       </div>
       <div class="content-big-box">
