@@ -49,6 +49,7 @@
 
 <script>
 import {loginUser} from '../../axios-service'
+import EventBus from '../../event-bus'
 
 export default {
   name: 'Login',
@@ -56,6 +57,7 @@ export default {
       return {
           email: '',   
           password: '', 
+          needLogin: true,
           params: {}
       }
     },
@@ -71,7 +73,12 @@ export default {
                     console.error(err)
                 } 
                 else{
-                    console.log(this.params);
+                    console.log(data);
+                    localStorage.setItem('access_token', JSON.stringify(data.id_token));
+                    EventBus.$emit('authenticated', 'true');
+                    EventBus.$emit('username', data.user);
+                    // this.$emit("authenticated", true);
+                    this.$router.replace({ name: "Home" });
                 }
             })
         }

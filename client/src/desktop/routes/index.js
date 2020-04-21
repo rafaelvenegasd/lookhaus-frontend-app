@@ -46,27 +46,42 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Home,
+    meta: {
+      isPublic: true
+    }
   },
   {
     path: '/log-in',
     name: 'Login',
-    component: Login
+    component: Login, 
+    meta: {
+      isPublic: true
+    }
   },
   {
     path: '/sign-up',
     name: 'Signup',
-    component: Signup
+    component: Signup, 
+    meta: {
+      isPublic: true
+    }
   },
   {
     path: '/offices',
     name: 'Offices',
-    component: Offices
+    component: Offices, 
+    meta: {
+      isPublic: true
+    }
   },
   {
     path: '/homes',
     name: 'Houses',
-    component: Houses
+    component: Houses, 
+    meta: {
+      isPublic: true
+    }
   },
   {
     path: '/create-property',
@@ -76,17 +91,20 @@ const routes = [
   {
     path: '/update-property',
     name: 'Update',
-    component: Update
+    component: Update 
   },
   {
     path: '/user-profile',
     name: 'Profile',
-    component: Profile
+    component: Profile, 
   },
   {
     path: '/property-detail',
     name: 'Detail',
-    component: Detail
+    component: Detail, 
+    meta: {
+      isPublic: true
+    }
   }
 ]
 
@@ -94,6 +112,7 @@ const router = new VueRouter({
   mode: 'history',
   routes: routes
 });
+
 
 export default router
 

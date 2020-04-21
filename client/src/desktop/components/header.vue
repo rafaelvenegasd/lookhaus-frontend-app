@@ -8,15 +8,20 @@
         <li><router-link tag="li" to="/create-property" exact>
           <a href="#" class="nav-link"><input type="submit" class="btn" value="Post your Place"></a>
         </router-link></li>
-        
-        <li><router-link tag="li" to="/log-in" exact>
+
+        <li><router-link tag="li" v-if="authenticated" to="/user-profile" exact>
+          <a class="nav-link">Hello {{this.username}}</a>
+        </router-link></li>
+
+        <li><router-link v-if="authenticated" to="/log-in" v-on:click.native="logout()">
+          <a class="nav-link">Logout</a>
+        </router-link></li>
+
+        <li><router-link v-if="!authenticated" tag="li" to="/log-in">
           <a class="nav-link">Login</a>
         </router-link></li>
 
-        <!-- TESTING: Eventually it will be deleted -->
-        <li><router-link tag="li" to="/user-profile" exact>
-          <a class="nav-link">User</a>
-        </router-link></li>
+
 
       </ul>
   </nav>
@@ -24,8 +29,30 @@
 </template>
 
 <script>
+import EventBus from '../../event-bus'
+
 export default {
     name: "Header",
+    data() {
+      return {
+          authenticated: false,
+          username: ''
+      }
+    },
+    mounted() {
+      EventBus.$on('authenticated', status =>{
+          this.authenticated = status;
+      })
+      EventBus.$on('username', username =>{
+          this.username = username;
+      })
+    }, 
+    methods: {
+      logout() {
+          this.authenticated = false;
+          localStorage.removeItem('access_token');
+      }
+    }
 }
 </script>
 
