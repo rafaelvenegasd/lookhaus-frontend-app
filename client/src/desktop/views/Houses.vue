@@ -22,7 +22,7 @@
                                         <li class="list-group-item"><h5 class="card-title">{{item.name}}</h5></li>
                                         <li class="list-group-item">
                                             <ul>
-                                                <li>Kind: {{item.kind}}</li>
+                                                <li>Kind: {{item.kind}} </li>
                                                 <li>Bathroom: {{item.bathrooms}}</li>
                                                 <li>Bedroom: {{item.bedrooms}}</li>
                                             </ul>
@@ -33,7 +33,7 @@
                                                 <span>{{item.price}} Euros </span>
                                             </div>
                                             <router-link tag="li" to="/property-detail" exact>
-                                                <input type="submit" class="btn" value="Check it out" :id="item._id" v-on:click="checkItOut()">
+                                                <input type="submit" class="btn" value="Check it out" :id="item._id" v-on:click="checkItOut(item._id)">
                                             </router-link>
                                         </li>
                                     </ul>
@@ -59,8 +59,7 @@ export default {
   name: 'Houses',
   data(){
     return {
-        type: 'home', 
-        id: '', 
+        type: 'home',  
         paginate:['items'],
         value: 50,
         items: [],
@@ -69,16 +68,19 @@ export default {
             title: 'Kind',
             value: `
                 <div>
-                    <input type="radio" name="kind" id="Private" class="mr-2 btn-radio" checked><label for="Private">Private</label>
+                    <input type="radio" name="kind" id="Flat" class="mr-2 btn-radio" checked><label for="Flat">Flat / Apartment</label>
                 </div>
                 <div>
-                    <input type="radio" name="kind" id="Coworking" class="mr-2 btn-radio"><label for="Coworking">Co-working</label>
+                    <input type="radio" name="kind" id="House" class="mr-2 btn-radio"><label for="House">House</label>
                 </div>
                 <div>
-                    <input type="radio" name="kind" id="Security" class="mr-2 btn-radio"><label for="Security">Security systen</label>
+                    <input type="radio" name="kind" id="Duplex" class="mr-2 btn-radio"><label for="Duplex">Duplex</label>
+                </div>
+                <div>
+                    <input type="radio" name="kind" id="Penthouses" class="mr-2 btn-radio"><label for="Penthouses">Penthouses</label>
                 </div>
             `,
-            category: 'kind'
+            category: 'Kind'
           },
           {
             title: 'Price',
@@ -89,6 +91,75 @@ export default {
                 </div>
             `,
             category: 'Price'
+          },
+          {
+            title: 'Bedrooms',
+            value: `
+                <div>
+                    <input type="radio" name="Bedrooms" id="studio" class="mr-2 btn-radio" checked><label for="studio">Studio</label>
+                </div>
+                <div>
+                    <input type="radio" name="Bedrooms" id="1_bedroom" class="mr-2 btn-radio"><label for="1_bedroom">1 bedroom</label>
+                </div>
+                <div>
+                    <input type="radio" name="Bedrooms" id="2_bedroom" class="mr-2 btn-radio"><label for="2_bedroom">2 bedrooms</label>
+                </div>
+                <div>
+                    <input type="radio" name="Bedrooms" id="3_bedroom" class="mr-2 btn-radio"><label for="3_bedroom">3 bedrooms</label>
+                </div>
+                <div>
+                    <input type="radio" name="Bedrooms" id="more_bedroom" class="mr-2 btn-radio"><label for="more_bedroom">More or 3 bedrooms</label>
+                </div>
+            `,
+            category: 'Bedrooms'
+          },
+          {
+            title: 'Bathrooms',
+            value: `
+                <div>
+                    <input type="radio" name="Bathrooms" id="studio" class="mr-2 btn-radio" checked><label for="studio">Studio</label>
+                </div>
+                <div>
+                    <input type="radio" name="Bathrooms" id="1_bedroom" class="mr-2 btn-radio"><label for="1_bedroom">1 bedroom</label>
+                </div>
+                <div>
+                    <input type="radio" name="Bathrooms" id="2_bedroom" class="mr-2 btn-radio"><label for="2_bedroom">2 Bathrooms</label>
+                </div>
+                <div>
+                    <input type="radio" name="Bathrooms" id="more_bedroom" class="mr-2 btn-radio"><label for="more_bedroom">More or 2 Bathrooms</label>
+                </div>
+            `,
+            category: 'Bathrooms'
+          },
+          {
+            title: 'Kitchen',
+            value: `
+                <div>
+                    <input type="radio" name="Kitchen" id="fully" class="mr-2 btn-radio" checked><label for="fully">Fully fitted</label>
+                </div>
+                <div>
+                    <input type="radio" name="Kitchen" id="furnished" class="mr-2 btn-radio"><label for="furnished">Furnished</label>
+                </div>
+                <div>
+                    <input type="radio" name="Kitchen" id="unfurnished" class="mr-2 btn-radio"><label for="unfurnished">Unfurnished</label>
+                </div>
+            `,
+            category: 'Kitchen'
+          },
+          {
+            title: 'Conditions',
+            value: `
+                <div>
+                    <input type="radio" name="Conditions" id="new" class="mr-2 btn-radio" checked><label for="new">New fitted</label>
+                </div>
+                <div>
+                    <input type="radio" name="Conditions" id="good" class="mr-2 btn-radio"><label for="good">Good conditions</label>
+                </div>
+                <div>
+                    <input type="radio" name="Conditions" id="renovation" class="mr-2 btn-radio"><label for="renovation">Needs renovation</label>
+                </div>
+            `,
+            category: 'Conditions'
           },
           {
             title: 'Published',
@@ -130,12 +201,11 @@ export default {
   mounted() {
       EventBus.$on('searching', data =>{
           this.items = data;
-          console.log(this.items)
       })
   }, 
   methods:{
-      checkItOut(){
-          getPropertiesById( this.type, this.id, (err, data) =>{
+      checkItOut(id){
+          getPropertiesById(this.type, id, (err, data) =>{
                 if(err){
                     console.error(err)
                 } 

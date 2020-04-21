@@ -4,21 +4,23 @@
       <div class="content-big-box">
           <h4>Tittle of the property</h4>
       <div class="mt-4">
-          <img src="../assets/images/img.jpg"  width="220px" alt="property-image">
+          <!-- <img :src="item.photos[0]"  width="220px" alt="property-image"> -->
       </div>
       </div>
       <div class="content-big-box">
       <div class="mt-5">
         <div class="ml-3">
             <div class="mb-3">
-                <button class="btn mt-4 mb-3" disabled>○ Bargain</button>
-                <h5>Price</h5>
+                <div :v-if="item.bargain">
+                    <button class="btn mt-4 mb-3" disabled >○ Bargain</button>
+                </div>
+                <h5 class="detail_tittle">{{item.price}} €</h5>
             </div>
-            <p class="mb-4 paragraph">Half-giant jinxes peg-leg gillywater broken glasses large black dog Great Hall. Nearly-Headless Nick now string them together, and answer me this, which creature would you be unwilling to kiss? Poltergeist sticking charm, troll umbrella stand flying cars golden locket Lily Potter. Pumpkin juice Trevor wave your wand out glass orbs, a Grim knitted hats. Stan Shunpike doe patronus, suck his soul Muggle-Born large order of drills the trace. Bred in captivity fell through the veil, quaffle blue flame ickle diddykins Aragog. Yer a wizard, Harry Doxycide the woes of Mrs. Weasley Goblet of Fire.</p>
+            <p class="mb-4 paragraph">{{item.description}}</p>
             <ul class="d-flex justify-content-between">
-                <li>item1</li>
-                <li>item2</li>
-                <li>item3</li>
+              <li class="details">Kind: {{item.kind}}</li>
+              <li class="details">Bathroom: {{item.bathrooms}}</li>
+              <li class="details">Bedroom: {{item.bedrooms}}</li>
             </ul>
         </div>
     </div>
@@ -76,12 +78,17 @@ import Maps from '../components/maps.vue'
 
 export default {
   name: 'Login',
+  data(){
+    return {
+      item: [],
+    }
+  },
   components:{
     Maps
   },
   mounted() {
       EventBus.$on('checkItOut', data =>{
-          console.log(data);
+          this.item = data;
       })
   }, 
   methods:{

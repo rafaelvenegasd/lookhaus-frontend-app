@@ -13,40 +13,54 @@
       @update:zoom="zoomUpdate"
     >
       <l-tile-layer :url="url" :attribution="attribution"></l-tile-layer>
-      <l-marker :lat-lng="markerLatLng" ></l-marker>
+      <l-circle
+      :lat-lng="circle.center"
+      :radius="circle.radius"
+      :color="circle.color"
+    />
     </l-map>
   </div>
 </template>
 
 <script>
 import { latLng } from "leaflet";
-import { LMap, LTileLayer, LMarker, LPopup, LTooltip } from "vue2-leaflet";
+import { LMap, LTileLayer, LCircle, LPopup, LTooltip } from "vue2-leaflet";
+import axios from 'axios';
 
 export default {
-  name: "Maps",
+  name: "Example",
   components: {
     LMap,
     LTileLayer,
-    LMarker,
+    LCircle,
     LPopup,
     LTooltip
   },
   data() {
     return {
+      coordenates: '',
       zoom: 13,
-      center: latLng(47.41322, -1.219482),
-      markerLatLng: latLng(47.41322, -1.219482),
+      center: latLng(0, 0),
+      circle: {
+        center: latLng(0, 0),
+        radius: 1000,
+        color: 'grey',
+        weight: 1
+      },
       url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
       attribution:
         '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
       currentZoom: 11.5,
-      currentCenter: latLng(47.41322, -1.219482),
+      currentCenter: latLng(0, 0),
       showParagraph: false,
       mapOptions: {
         zoomSnap: 0.5
       },
-      showMap: true
+      showMap: true,
     };
+  },
+  mounted() {
+    this.locationToCoords();
   },
   methods: {
     zoomUpdate(zoom) {
@@ -60,6 +74,26 @@ export default {
     },
     innerClick() {
       alert("Click!");
+    },
+    locationToCoords(){
+      const a = {
+          street:'Passeig de Joan de Borbó',
+          city:'Barcelona',
+          country:'España',
+          postalcode:'08039'
+      }
+      const url = Object.keys(a).map(function(k) {
+        return encodeURIComponent(k) + '=' + encodeURIComponent(a[k])
+      }).join('&');
+      axios
+        .get(`https://nominatim.openstreetmap.org/search?format=json&${url}`)
+        .then(res => {
+          this.coordenates = latLng(res.data[0].lat, res.data[0].lon);
+          this.center = this.coordenates;
+          this.circle.center = this.coordenates;
+          this.currentCenter = this.coordenates;      
+        })
+        .catch(err => console.log(err));
     }
   }
 };

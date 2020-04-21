@@ -94,6 +94,28 @@ li{
     list-style: none;
 }
 
+.accordion{
+	width: fit-content;
+}
+
+.paginate-links{
+	text-align: center;
+	margin-top: 40px;
+  }
+
+  .paginate-links li {
+    display: inline;
+    background-color: $primary-color;
+    color:white;
+    padding:0.5rem;
+    margin-left:0.3rem;
+    margin-right: 0.3rem;
+    cursor:pointer;
+    border-radius: 3px;
+  }
+
+
+
 
 input[type='range'] {
 	display: inline-block;

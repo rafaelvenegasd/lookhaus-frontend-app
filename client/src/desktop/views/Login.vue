@@ -66,7 +66,6 @@ export default {
             "password": this.password, 
           }
           event.preventDefault()
-          console.log(this.params);
           loginUser(this.params, (err, data) =>{
                 if(err){
                     console.error(err)
