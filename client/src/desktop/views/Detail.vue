@@ -5,17 +5,17 @@
           <h4>Tittle of the property</h4>
       <div class="mt-4">          
 
-          <carousel :navigationEnabled="true">
-            <slide :adjustableHeight="true">
+           <carousel :per-page="1" :navigationEnabled="true" :mouse-drag="false">
+            <slide>
               <img class="photos" width="800px" src="../assets/images/cover.jpg">
             </slide>
-            <slide :adjustableHeight="true">
+            <slide>
               <img class="photos" width="800px" src="../assets/images/cover2.jpg">
             </slide>
-            <slide :adjustableHeight="true">
+            <slide>
               <img class="photos" width="800px" src="../assets/images/maps.jpg">
             </slide>
-            <slide :adjustableHeight="true">
+            <slide>
               <img class="photos" width="800px" src="../assets/images/img.jpg">
             </slide>
           </carousel>
