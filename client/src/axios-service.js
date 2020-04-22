@@ -26,6 +26,17 @@ export function getPropertiesById(type, id, cb){
   })
 }
 
+export function getPropertiesByParams(type, paramName, param, cb){
+  axios.get(base_url+ type + `?` + paramName + "=" + param)
+  .then(function (res) {
+      cb(null, res.data);
+  })
+  .catch(function (error) {
+      console.log(error);
+      cb(error, null);
+  })
+}
+
 export function signupUser(params, cb){
   axios.post(base_url + `signup/users`, params)
   .then(function (res) {

@@ -113,6 +113,13 @@ const router = new VueRouter({
   routes: routes
 });
 
+function existToken() {
+  return localStorage.getItem('access_token');
+}
+
+if (!(record => record.meta.isPublic) || !existToken()) {
+    router.replace({ name: "Home" });
+} 
 
 export default router
 

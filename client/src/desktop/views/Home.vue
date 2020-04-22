@@ -9,13 +9,13 @@
           </div>
           <div class="d-flex justify-content-center align-items-center flex-column container">
             <div>
-              <input type="radio" name="place" id="live" class="mr-2 btn-radio" v-model="selected" value="homes" checked><label for="live" class="mr-3">Place to live</label>
-              <input type="radio" name="place" id="work" class="mr-2 btn-radio" v-model="selected" value="offices"><label for="work">Place to work / Office</label>
+                <input type="radio" name="place" id="homes" class="mr-2 btn-radio" v-model="item_selected" value="homes"><label for="homes" class="mr-3">Place to live</label>
+                <input type="radio" name="place" id="offices" class="mr-2 btn-radio" v-model="item_selected" value="offices"><label for="offices">Place to work / Office</label>
             </div>
           </div>
           <div id="searcher" class="d-flex justify-content-center align-items-center flex-column container mb-4">
               <!-- <input type="text" placeholder="Type city, town, etc." class="col-form-label-sm" v-model="message"> -->
-              <router-link tag="li" :to="selected" exact>
+              <router-link tag="li" :to="item_selected" exact>
                 <input type="submit" value="Search" class="btn mt-2" v-on:click="search()">
               </router-link>
           </div>
@@ -61,12 +61,12 @@ export default {
   data() {
       return {
           message: '',
-          selected: ''  
+          item_selected: ''  
       }
     },
     methods:{
         search(){
-          getProperties(this.selected, (err, data) =>{
+          getProperties(this.item_selected, (err, data) =>{
                 if(err){
                     console.error(err)
                 } 
