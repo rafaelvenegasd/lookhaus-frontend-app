@@ -3,8 +3,44 @@
     <div class="d-flex justify-content-between "> 
       <div class="content-big-box">
           <h4>Tittle of the property</h4>
-      <div class="mt-4">
-          <!-- <img :src="item.photos[0]"  width="220px" alt="property-image"> -->
+      <div class="mt-4">          
+
+          <carousel :navigationEnabled="true">
+            <slide :adjustableHeight="true">
+              <img class="photos" width="800px" src="../assets/images/cover.jpg">
+            </slide>
+            <slide :adjustableHeight="true">
+              <img class="photos" width="800px" src="../assets/images/cover2.jpg">
+            </slide>
+            <slide :adjustableHeight="true">
+              <img class="photos" width="800px" src="../assets/images/maps.jpg">
+            </slide>
+            <slide :adjustableHeight="true">
+              <img class="photos" width="800px" src="../assets/images/img.jpg">
+            </slide>
+          </carousel>
+        <!-- <agile>
+          <figure><img width="990px" src="../assets/images/cover.jpg"></figure>
+          <figure><img width="990px" src="../assets/images/cover2.jpg"></figure>
+          <figure><img width="990px" src="../assets/images/cover.jpg"></figure>
+          <figure><img width="990px" src="../assets/images/cover2.jpg"></figure>
+          <figure><img width="990px" src="../assets/images/cover.jpg"></figure>
+          <figure><img width="990px" src="../assets/images/cover2.jpg"></figure>
+          
+          <template slot="prevButton">prev</template>
+          <template slot="nextButton">next</template>
+        </agile> -->
+
+
+        <!-- <agile>
+          <div class="slide" v-for="item in item.photos">
+              <img :src="item"  width="220px" alt="property-image">
+          </div>
+      </agile> -->
+      
+      
+      
+      
       </div>
       </div>
       <div class="content-big-box">
@@ -75,6 +111,7 @@
 import Swal from 'sweetalert2'
 import EventBus from '../../event-bus'
 import Maps from '../components/maps.vue'
+import { Carousel, Slide } from 'vue-carousel';
 
 export default {
   name: 'Login',
@@ -84,11 +121,14 @@ export default {
     }
   },
   components:{
-    Maps
+    Maps, 
+    Carousel,
+    Slide
   },
   mounted() {
       EventBus.$on('checkItOut', data =>{
           this.item = data;
+          console.log(this.item);
       })
   }, 
   methods:{

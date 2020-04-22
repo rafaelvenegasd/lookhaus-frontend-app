@@ -303,11 +303,9 @@ export default {
       checkFilter(paramName, param, event){
             getPropertiesByParams(this.type + 's', paramName, param, (err, data) =>{
                 try{
-                    console.log(data);
                     if (data.length > 0){
                         return this.items = data;
                      }
-                    
                 }
                 catch(err){
                     console.error(err)
