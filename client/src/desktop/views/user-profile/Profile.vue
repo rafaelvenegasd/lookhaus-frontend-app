@@ -112,6 +112,7 @@ export default {
     name: 'Profile',
     methods:{
         deleteProperty(){
+            event.preventDefault();
             const swalWithBootstrapButtons = Swal.mixin({
                 customClass: {
                     confirmButton: 'btn btn-success',

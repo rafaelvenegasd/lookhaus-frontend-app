@@ -19,28 +19,6 @@
               <img class="photos" width="800px" src="../assets/images/img.jpg">
             </slide>
           </carousel>
-        <!-- <agile>
-          <figure><img width="990px" src="../assets/images/cover.jpg"></figure>
-          <figure><img width="990px" src="../assets/images/cover2.jpg"></figure>
-          <figure><img width="990px" src="../assets/images/cover.jpg"></figure>
-          <figure><img width="990px" src="../assets/images/cover2.jpg"></figure>
-          <figure><img width="990px" src="../assets/images/cover.jpg"></figure>
-          <figure><img width="990px" src="../assets/images/cover2.jpg"></figure>
-          
-          <template slot="prevButton">prev</template>
-          <template slot="nextButton">next</template>
-        </agile> -->
-
-
-        <!-- <agile>
-          <div class="slide" v-for="item in item.photos">
-              <img :src="item"  width="220px" alt="property-image">
-          </div>
-      </agile> -->
-      
-      
-      
-      
       </div>
       </div>
       <div class="content-big-box">
@@ -133,6 +111,7 @@ export default {
   }, 
   methods:{
     reachOwner(){
+      event.preventDefault();
       Swal.fire(
         'Message sended!',
         'The owner will contact to you soon!',
