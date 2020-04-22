@@ -20,16 +20,16 @@
                     <div class="card-body">
                         <div>
                             <div>
-                                <input type="radio" name="radioBtn" id="Flat" v-model="item_selected" value="flat" class="mr-2 btn-radio" v-on:click="checkFilter('kind')" ><label for="Flat">Flat / Apartment</label>
+                                <input type="radio" name="radioBtn" id="Flat" class="mr-2 btn-radio" v-on:click="checkFilter('kind', 'flat')" ><label for="Flat">Flat / Apartment</label>
                             </div>
                             <div>
-                                <input type="radio" name="radioBtn" id="House" v-model="item_selected" value="home" class="mr-2 btn-radio" v-on:click="checkFilter('kind')"><label for="House">House</label>
+                                <input type="radio" name="radioBtn" id="House"  class="mr-2 btn-radio" v-on:click="checkFilter('kind', 'home')"><label for="House">House</label>
                             </div>
                             <div>
-                                <input type="radio" name="radioBtn" id="Duplex" v-model="item_selected" value="duplex" class="mr-2 btn-radio" v-on:click="checkFilter('kind')"><label for="Duplex">Duplex</label>
+                                <input type="radio" name="radioBtn" id="Duplex" class="mr-2 btn-radio" v-on:click="checkFilter('kind', 'duplex')"><label for="Duplex">Duplex</label>
                             </div>
                             <div>
-                                <input type="radio" name="radioBtn" id="Penthouses" v-model="item_selected" value="penthouses" class="mr-2 btn-radio" v-on:click="checkFilter('kind')"><label for="Penthouses">Penthouses</label>
+                                <input type="radio" name="radioBtn" id="Penthouses" class="mr-2 btn-radio" v-on:click="checkFilter('kind', 'penthouses')"><label for="Penthouses">Penthouses</label>
                             </div>
                         </div>
                     </div>
@@ -49,7 +49,7 @@
 
                         
                         <div class="slidecontainer" >
-                            <input type="range" min="100" max="1200" steps="100" v-model="item_selected" value="500" v-on:click="checkFilter('price')" class="slider">
+                            <input type="range" min="100" max="1200" steps="100" value="500" v-on:click="checkFilter('price')" class="slider">
                             <div class="d-flex">
                                 <div v-for="value in 12" class="mr-2">
                                     <span >{{value * 100}}</span>
@@ -76,19 +76,19 @@
                     <div class="card-body">
                         <div>
                             <div>
-                                <input type="radio" name="radioBtn" id="studio" v-model="item_selected" value="0" class="mr-2 btn-radio" v-on:click="checkFilter('bedrooms')" ><label for="studio">Studio</label>
+                                <input type="radio" name="radioBtn" id="studio" class="mr-2 btn-radio" v-on:click="checkFilter('bedrooms', 0)" ><label for="studio">Studio</label>
                             </div>
                             <div>
-                                <input type="radio" name="radioBtn" id="1_bedroom" v-model="item_selected" value="1" class="mr-2 btn-radio" v-on:click="checkFilter('bedrooms')"><label for="1_bedroom">1 bedroom</label>
+                                <input type="radio" name="radioBtn" id="1_bedroom" class="mr-2 btn-radio" v-on:click="checkFilter('bedrooms', 1)"><label for="1_bedroom">1 bedroom</label>
                             </div>
                             <div>
-                                <input type="radio" name="radioBtn" id="2_bedroom" v-model="item_selected" value="2" class="mr-2 btn-radio" v-on:click="checkFilter('bedrooms')"><label for="2_bedroom">2 bedrooms</label>
+                                <input type="radio" name="radioBtn" id="2_bedroom" class="mr-2 btn-radio" v-on:click="checkFilter('bedrooms', 2)"><label for="2_bedroom">2 bedrooms</label>
                             </div>
                             <div>
-                                <input type="radio" name="radioBtn" id="3_bedroom" v-model="item_selected" value="3" class="mr-2 btn-radio" v-on:click="checkFilter('bedrooms')"><label for="3_bedroom">3 bedrooms</label>
+                                <input type="radio" name="radioBtn" id="3_bedroom" class="mr-2 btn-radio" v-on:click="checkFilter('bedrooms', 3)"><label for="3_bedroom">3 bedrooms</label>
                             </div>
                             <div>
-                                <input type="radio" name="radioBtn" id="more_bedroom" v-model="item_selected" value="more" class="mr-2 btn-radio" v-on:click="checkFilter('bedrooms')"><label for="more_bedroom">More or 3 bedrooms</label>
+                                <input type="radio" name="radioBtn" id="more_bedroom" class="mr-2 btn-radio" v-on:click="checkFilter('bedrooms', 'more')"><label for="more_bedroom">More or 3 bedrooms</label>
                             </div>
                         </div>
                     </div>
@@ -107,13 +107,13 @@
                     <div class="card-body">
                         <div>
                             <div>
-                                <input type="radio" name="radioBtn" id="1_bedroom" v-model="item_selected" value="1" class="mr-2 btn-radio" v-on:click="checkFilter('bathrooms')"><label for="1_bedroom">1 bathroom</label>
+                                <input type="radio" name="radioBtn" id="1_bedroom" class="mr-2 btn-radio" v-on:click="checkFilter('bathrooms', 1)"><label for="1_bedroom">1 bathroom</label>
                             </div>
                             <div>
-                                <input type="radio" name="radioBtn" id="2_bedroom" v-model="item_selected" value="2" class="mr-2 btn-radio" v-on:click="checkFilter('bathrooms')"><label for="2_bedroom">2 Bathrooms</label>
+                                <input type="radio" name="radioBtn" id="2_bedroom" class="mr-2 btn-radio" v-on:click="checkFilter('bathrooms', 2)"><label for="2_bedroom">2 Bathrooms</label>
                             </div>
                             <div>
-                                <input type="radio" name="radioBtn" id="more_bedroom" v-model="item_selected" value="more" class="mr-2 btn-radio" v-on:click="checkFilter('bathrooms')"><label for="more_bedroom">More or 2 Bathrooms</label>
+                                <input type="radio" name="radioBtn" id="more_bedroom" class="mr-2 btn-radio" v-on:click="checkFilter('bathrooms', 'more')"><label for="more_bedroom">More or 2 Bathrooms</label>
                             </div>
                         </div>
                     </div>
@@ -132,13 +132,13 @@
                     <div class="card-body">
                         <div>
                             <div>
-                                <input type="radio" name="radioBtn" id="fully" v-model="item_selected" value="fully fitted" class="mr-2 btn-radio" v-on:click="checkFilter('kitchen')" ><label for="fully">Fully fitted</label>
+                                <input type="radio" name="radioBtn" id="fully" class="mr-2 btn-radio" v-on:click="checkFilter('kitchen', 'fully fitted')" ><label for="fully">Fully fitted</label>
                             </div>
                             <div>
-                                <input type="radio" name="radioBtn" id="furnished" v-model="item_selected" value="furnished" class="mr-2 btn-radio" v-on:click="checkFilter('kitchen')"><label for="furnished">Furnished</label>
+                                <input type="radio" name="radioBtn" id="furnished" class="mr-2 btn-radio" v-on:click="checkFilter('kitchen', 'furnished')"><label for="furnished">Furnished</label>
                             </div>
                             <div>
-                                <input type="radio" name="radioBtn" id="unfurnished" v-model="item_selected" value="unfurnished" class="mr-2 btn-radio" v-on:click="checkFilter('kitchen')"><label for="unfurnished">Unfurnished</label>
+                                <input type="radio" name="radioBtn" id="unfurnished" class="mr-2 btn-radio" v-on:click="checkFilter('kitchen', 'unfurnished')"><label for="unfurnished">Unfurnished</label>
                             </div>
                         </div>
                     </div>
@@ -157,13 +157,13 @@
                     <div class="card-body">
                         <div>
                             <div>
-                                <input type="radio" name="radioBtn" id="new" v-model="item_selected" value="new" class="mr-2 btn-radio" v-on:click="checkFilter('condition')" ><label for="new">New fitted</label>
+                                <input type="radio" name="radioBtn" id="new" class="mr-2 btn-radio" v-on:click="checkFilter('condition', 'new')" ><label for="new">New fitted</label>
                             </div>
                             <div>
-                                <input type="radio" name="radioBtn" id="good" v-model="item_selected" value="good" class="mr-2 btn-radio" v-on:click="checkFilter('condition')"><label for="good">Good conditions</label>
+                                <input type="radio" name="radioBtn" id="good" class="mr-2 btn-radio" v-on:click="checkFilter('condition', 'good')"><label for="good">Good conditions</label>
                             </div>
                             <div>
-                                <input type="radio" name="radioBtn" id="renovation" v-model="item_selected" value="need renovation" class="mr-2 btn-radio" v-on:click="checkFilter('condition')"><label for="renovation">Needs renovation</label>
+                                <input type="radio" name="radioBtn" id="renovation" class="mr-2 btn-radio" v-on:click="checkFilter('condition', 'need renovation')"><label for="renovation">Needs renovation</label>
                             </div>
                         </div>
                     </div>
@@ -182,13 +182,13 @@
                     <div class="card-body">
                         <div>
                             <div>
-                                <input type="radio" name="radioBtn" id="ago" v-model="item_selected" value="" class="mr-2 btn-radio" v-on:click="checkFilter('kind')" ><label for="ago">48H ago</label>
+                                <input type="radio" name="radioBtn" id="ago" class="mr-2 btn-radio" v-on:click="checkFilter('published', '')" ><label for="ago">48H ago</label>
                             </div>
                             <div>
-                                <input type="radio" name="radioBtn" id="week" v-model="item_selected" value="" class="mr-2 btn-radio" v-on:click="checkFilter('kind')"><label for="week">Last week</label>
+                                <input type="radio" name="radioBtn" id="week" class="mr-2 btn-radio" v-on:click="checkFilter('published', '')"><label for="week">Last week</label>
                             </div>
                             <div>
-                                <input type="radio" name="radioBtn" id="month" v-model="item_selected" value="" class="mr-2 btn-radio" v-on:click="checkFilter('kind')"><label for="month">Last month</label>
+                                <input type="radio" name="radioBtn" id="month" class="mr-2 btn-radio" v-on:click="checkFilter('published', '')"><label for="month">Last month</label>
                             </div>
                         </div>
                     </div>
@@ -279,20 +279,19 @@ export default {
         type: 'home',  
         paginate:['items'],
         items: [],
-        item_selected: ''
     }
   },
     components: {
         VueFaqAccordion
   },
-  mounted() {
-      EventBus.$on('searching', data =>{
+  async mounted() {
+      await EventBus.$on('searching', data =>{
             this.items = data;
       })
   }, 
   methods:{
-      checkItOut(id){
-          getPropertiesById(this.type, id, (err, data) =>{
+      async checkItOut(id){
+          await getPropertiesById(this.type, id, (err, data) =>{
                 if(err){
                     console.error(err)
                 } 
@@ -301,15 +300,18 @@ export default {
                 }
             })
       },
-      checkFilter(paramName){
-            getPropertiesByParams(this.type + 's', paramName, this.item_selected, (err, data) =>{
-                if(err){
+      checkFilter(paramName, param, event){
+            getPropertiesByParams(this.type + 's', paramName, param, (err, data) =>{
+                try{
+                    console.log(data);
+                    if (data.length > 0){
+                        return this.items = data;
+                     }
+                    
+                }
+                catch(err){
                     console.error(err)
                 } 
-                else{
-                    console.log(this.items);
-                    this.items = data;
-                }
             })
       } 
   }

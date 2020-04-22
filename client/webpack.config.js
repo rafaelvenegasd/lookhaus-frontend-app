@@ -3,13 +3,13 @@ const webpack = require('webpack')
 const {VueLoaderPlugin} = require('vue-loader')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const Dotenv = require('dotenv-webpack');
-// require("babel-polyfill");
+require("babel-polyfill");
 
 module.exports = {
     mode: 'development',
     entry: {
-		'desktop':'./src/desktop/index.js',
-		'mobile':'./src/mobile/index.js'
+		'desktop': './src/desktop/index.js',
+		'mobile': './src/mobile/index.js',
 	},
 	output: {
 		filename: '[name]/bundle.js',
