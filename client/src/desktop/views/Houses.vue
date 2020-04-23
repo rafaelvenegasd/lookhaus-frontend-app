@@ -244,7 +244,7 @@
                                                 <li>Bedroom: {{item.bedrooms}}</li>
                                             </ul>
                                         </li>
-                                        <li class="list-group-item">Dirección</li>
+                                        <li class="list-group-item">Dirección: {{item.street}}, {{item.city}} </li>
                                         <li class="list-group-item">
                                             <div class="mb-3">
                                                 <span>{{item.price}} Euros </span>

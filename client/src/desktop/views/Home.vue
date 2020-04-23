@@ -4,7 +4,7 @@
       <div class="d-flex justify-content-center align-items-center flex-column container">
         <div class="searcher-container">
           <div class="d-flex justify-content-center align-items-center flex-column container mb-3">
-            <img alt="Lookhaus logo" src="../assets/images/logos/black-small.png" class="logo mb-2 pt-3"> 
+            <img alt="Lookhaus logo" src="../assets/images/logos/black-small.png" class="logo mb-2 pt-3">
             <span>Find the perfect place</span>
           </div>
           <div class="d-flex justify-content-center align-items-center flex-column container">

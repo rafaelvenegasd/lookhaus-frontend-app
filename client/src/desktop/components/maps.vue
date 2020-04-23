@@ -26,6 +26,7 @@
 import { latLng } from "leaflet";
 import { LMap, LTileLayer, LCircle, LPopup, LTooltip } from "vue2-leaflet";
 import axios from 'axios';
+import EventBus from '../../event-bus'
 
 export default {
   name: "Example",
@@ -38,6 +39,9 @@ export default {
   },
   data() {
     return {
+      street: '',
+      city: '',
+      country: '',
       coordenates: '',
       zoom: 13,
       center: latLng(0, 0),
@@ -60,7 +64,13 @@ export default {
     };
   },
   mounted() {
-    this.locationToCoords();
+    
+    EventBus.$on('checkItOut', async data =>{
+        this.street = data.street;
+        this.city = data.city;
+        this.country = data.country;
+        await this.locationToCoords()
+    })
   },
   methods: {
     zoomUpdate(zoom) {
@@ -77,10 +87,9 @@ export default {
     },
     locationToCoords(){
       const a = {
-          street:'Passeig de Joan de Borbó',
-          city:'Barcelona',
-          country:'España',
-          postalcode:'08039'
+          street: this.street,
+          city: this.city,
+          country: this.country,
       }
       const url = Object.keys(a).map(function(k) {
         return encodeURIComponent(k) + '=' + encodeURIComponent(a[k])
@@ -91,7 +100,7 @@ export default {
           this.coordenates = latLng(res.data[0].lat, res.data[0].lon);
           this.center = this.coordenates;
           this.circle.center = this.coordenates;
-          this.currentCenter = this.coordenates;      
+          this.currentCenter = this.coordenates;    
         })
         .catch(err => console.log(err));
     }

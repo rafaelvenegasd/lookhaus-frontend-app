@@ -81,7 +81,7 @@
                                     <span>Price</span>
                                 </div>
                                 <router-link tag="li" to="/update-property" exact>
-                                    <input type="submit" class="btn mb-2" value="Edit Property">
+                                    <input type="submit" class="btn mb-2" value="Edit Property" v-on:click="goToUpdate('5e98913f8e059a2e1a32dd2f')">
                                 </router-link>
                                 <button type="submit" class="btn transparent-btn mb-4" v-on:click="deleteProperty"> Delete Property </button>
                             </li>
@@ -107,10 +107,22 @@
 
 <script>
 import Swal from 'sweetalert2'
+import {getPropertiesById} from '../../../axios-service'
+import EventBus from '../../../event-bus'
 
 export default {
     name: 'Profile',
     methods:{
+        async goToUpdate(id){
+          await getPropertiesById(this.type, id, (err, data) =>{
+                if(err){
+                    console.error(err)
+                } 
+                else{
+                    EventBus.$emit('goToUpdate', data);
+                }
+            })
+        },
         deleteProperty(){
             event.preventDefault();
             const swalWithBootstrapButtons = Swal.mixin({

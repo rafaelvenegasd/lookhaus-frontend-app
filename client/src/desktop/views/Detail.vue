@@ -2,10 +2,10 @@
   <div class="container ">
     <div class="d-flex justify-content-between "> 
       <div class="content-big-box">
-          <h4>Tittle of the property</h4>
+          <h4>{{item.name}}</h4>
       <div class="mt-4">          
 
-           <carousel :per-page="1" :navigationEnabled="true" :mouse-drag="false">
+          <carousel :per-page="1" :navigationEnabled="true" :mouse-drag="false" :autoplay="true" :autoplayTimeout="5000" :loop="true">
             <slide>
               <img class="photos" width="800px" src="../assets/images/cover.jpg">
             </slide>
@@ -106,7 +106,6 @@ export default {
   mounted() {
       EventBus.$on('checkItOut', data =>{
           this.item = data;
-          console.log(this.item);
       })
   }, 
   methods:{
