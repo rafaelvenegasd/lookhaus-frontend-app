@@ -72,6 +72,7 @@ export default {
                 } 
                 else{
                     EventBus.$emit('searching', data);
+                    console.log(data);
                 }
             })
         }

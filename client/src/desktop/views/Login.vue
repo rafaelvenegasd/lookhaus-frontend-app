@@ -73,9 +73,8 @@ export default {
                     console.error(err)
                 } 
                 else{
-                    console.log(data);
+                    // console.log(data);
                     localStorage.setItem('access_token', JSON.stringify(data.id_token));
-                    EventBus.$emit('authenticated', 'true');
                     EventBus.$emit('username', data.user);
                     this.$router.replace({ name: "Home" });
                 }

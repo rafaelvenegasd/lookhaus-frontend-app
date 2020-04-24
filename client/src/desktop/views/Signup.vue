@@ -68,7 +68,6 @@ export default {
           }
 
           event.preventDefault()
-          console.log(this.params);
           signupUser(this.params, (err, data) =>{
                 if(err){
                     console.error(err)

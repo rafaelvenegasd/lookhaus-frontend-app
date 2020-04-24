@@ -16,7 +16,7 @@
 
             <div class="d-flex justify-content-between">
                 <div>
-                    <input type="file" name="images" id="images" multiple class="btn transparent-btn mb-4" @change="onFileSelected" accept="image/png, image/jpeg">
+                    <input type="file" name="images"  id="images" multiple class="btn transparent-btn mb-4" @change="onFileSelected" accept="image/png, image/jpeg">
                         
                     <div class="d-flex mb-4">
                         <img alt="Lookhaus logo" src="../../assets/images/logos/black-small.png" class="logo mr-4">

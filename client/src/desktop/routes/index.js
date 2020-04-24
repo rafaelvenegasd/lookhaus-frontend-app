@@ -121,5 +121,17 @@ if (!(record => record.meta.isPublic) || !existToken()) {
     router.replace({ name: "Home" });
 } 
 
+
+// router.beforeEach((to, from, next) => {
+//   if (!(record => record.meta.isPublic) || !Auth.loggedIn()) {
+//       next({
+//           path: '/login',
+//           query: { redirect: to.fullPath }
+//       })
+//   } else {
+//         router.replace({ name: "Home" });
+//   }
+// });
+
 export default router
 

@@ -40,11 +40,14 @@ export default {
       }
     },
     mounted() {
-      EventBus.$on('authenticated', status =>{
-          this.authenticated = status;
-      })
+        if(localStorage.getItem('access_token')){
+          this.authenticated = true;
+        }
+        console.log(this.authenticated);
+
       EventBus.$on('username', username =>{
           this.username = username;
+          this.authenticated = true;
       })
     }, 
     methods: {

@@ -51,7 +51,7 @@
                         <div class="slidecontainer" >
                             <input type="range" min="100" max="1200" steps="100" value="500" v-on:click="checkFilter('price')" class="slider">
                             <div class="d-flex">
-                                <div v-for="value in 12" class="mr-2">
+                                <div v-for="value in 12" :key="value">
                                     <span >{{value * 100}}</span>
                                 </div>
                             </div>
