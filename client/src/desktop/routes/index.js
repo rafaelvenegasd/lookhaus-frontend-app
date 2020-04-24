@@ -34,7 +34,8 @@ import Login from '../views/Login.vue'
 import Signup from '../views/Signup.vue'
 import Offices from '../views/Offices.vue'
 import Houses from '../views/Houses.vue'
-import Detail from '../views/Detail.vue'
+import homeDetail from '../views/homeDetail.vue'
+import officeDetail from '../views/officeDetail.vue'
 import Create from '../views/user-profile/Create.vue'
 import Update from '../views/user-profile/Update.vue'
 import Profile from '../views/user-profile/Profile.vue'
@@ -71,17 +72,12 @@ const routes = [
     path: '/offices',
     name: 'Offices',
     component: Offices, 
-    meta: {
-      isPublic: true
-    }
+
   },
   {
     path: '/homes',
     name: 'Houses',
     component: Houses, 
-    meta: {
-      isPublic: true
-    }
   },
   {
     path: '/create-property',
@@ -99,12 +95,14 @@ const routes = [
     component: Profile, 
   },
   {
-    path: '/property-detail',
-    name: 'Detail',
-    component: Detail, 
-    meta: {
-      isPublic: true
-    }
+    path: '/home-detail',
+    name: 'homeDetail',
+    component: homeDetail, 
+  },
+  {
+    path: '/office-detail',
+    name: 'officeDetail',
+    component: officeDetail, 
   }
 ]
 
@@ -120,18 +118,6 @@ function existToken() {
 if (!(record => record.meta.isPublic) || !existToken()) {
     router.replace({ name: "Home" });
 } 
-
-
-// router.beforeEach((to, from, next) => {
-//   if (!(record => record.meta.isPublic) || !Auth.loggedIn()) {
-//       next({
-//           path: '/login',
-//           query: { redirect: to.fullPath }
-//       })
-//   } else {
-//         router.replace({ name: "Home" });
-//   }
-// });
 
 export default router
 

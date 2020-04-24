@@ -4,8 +4,6 @@
         <div class="content-big-box">
             <h4>Find your perfect place to live</h4>
 
-            <!-- <VueFaqAccordion :items="myItems"/> -->
-
             <!-- Collapse  -->
             <div id="accordion" class="d-flex accordion">
                 <div class="card mr-4">
@@ -49,16 +47,8 @@
 
                         
                         <div class="slidecontainer" >
-                            <input type="range" min="100" max="1200" steps="100" value="500" v-on:click="checkFilter('price')" class="slider">
-                            <div class="d-flex">
-                                <div v-for="value in 12" :key="value">
-                                    <span >{{value * 100}}</span>
-                                </div>
-                            </div>
-
-                            <!-- <datalist id="tickmarks" v-for="num in nums"> 
-                                <option :value=num :label=num />
-                            </datalist> -->
+                            <input type="range" name="princeInput" id="priceInput" min="100" max="1200" step="10" value="500" v-model="price" :v-on:click="checkFilter('price', price)" oninput="priceOutput.value = priceInput.value" class="slider">
+                            <output name="priceOutput" id="priceOutput">500</output>
                         </div>
                     </div>
                     </div>
@@ -85,10 +75,7 @@
                                 <input type="radio" name="radioBtn" id="2_bedroom" class="mr-2 btn-radio" v-on:click="checkFilter('bedrooms', 2)"><label for="2_bedroom">2 bedrooms</label>
                             </div>
                             <div>
-                                <input type="radio" name="radioBtn" id="3_bedroom" class="mr-2 btn-radio" v-on:click="checkFilter('bedrooms', 3)"><label for="3_bedroom">3 bedrooms</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="radioBtn" id="more_bedroom" class="mr-2 btn-radio" v-on:click="checkFilter('bedrooms', 'more')"><label for="more_bedroom">More or 3 bedrooms</label>
+                                <input type="radio" name="radioBtn" id="more_bedroom" class="mr-2 btn-radio" v-on:click="checkFilter('bedrooms', 'more')"><label for="more_bedroom">More or 2 bedrooms</label>
                             </div>
                         </div>
                     </div>
@@ -96,14 +83,14 @@
                 </div>
                 
                 <div class="card mr-4">
-                    <div class="card-header" id="headingThree">
+                    <div class="card-header" id="headingFour">
                     <h5 class="mb-0">
-                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                         +     bathrooms
                         </button>
                     </h5>
                     </div>
-                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
                     <div class="card-body">
                         <div>
                             <div>
@@ -121,14 +108,14 @@
                 </div>
                 
                 <div class="card mr-4">
-                    <div class="card-header" id="headingThree">
+                    <div class="card-header" id="headingFive">
                     <h5 class="mb-0">
-                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                         +     Kitchen
                         </button>
                     </h5>
                     </div>
-                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
                     <div class="card-body">
                         <div>
                             <div>
@@ -146,14 +133,14 @@
                 </div>
                 
                 <div class="card mr-4">
-                    <div class="card-header" id="headingThree">
+                    <div class="card-header" id="headingSix">
                     <h5 class="mb-0">
-                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
                         +     Conditions
                         </button>
                     </h5>
                     </div>
-                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
                     <div class="card-body">
                         <div>
                             <div>
@@ -169,57 +156,6 @@
                     </div>
                     </div>
                 </div>
-
-                <!-- <div class="card mr-4">
-                    <div class="card-header" id="headingThree">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        +     Published
-                        </button>
-                    </h5>
-                    </div>
-                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                    <div class="card-body">
-                        <div>
-                            <div>
-                                <input type="radio" name="radioBtn" id="ago" class="mr-2 btn-radio" v-on:click="checkFilter('published', '')" ><label for="ago">48H ago</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="radioBtn" id="week" class="mr-2 btn-radio" v-on:click="checkFilter('published', '')"><label for="week">Last week</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="radioBtn" id="month" class="mr-2 btn-radio" v-on:click="checkFilter('published', '')"><label for="month">Last month</label>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                </div> -->
-
-                <!-- <div class="card mr-4">
-                    <div class="card-header" id="headingFour">
-                    <h5 class="mb-0">
-                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                        +     Others
-                        </button>
-                    </h5>
-                    </div>
-                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-                    <div class="card-body">
-                        <div>
-                            <div>
-                                <input type="radio" name="radioBtn" id="op1" class="mr-2 btn-radio"  ><label for="op1">Pets allowed</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="radioBtn" id="op2" class="mr-2 btn-radio" ><label for="op2">Option 2</label>
-                            </div>
-                            <div>
-                                <input type="radio" name="radioBtn" id="op3" class="mr-2 btn-radio" ><label for="op3">Option 3</label>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-                </div> -->
-
             </div>
             <!-- End Collapse -->
         
@@ -229,7 +165,7 @@
                         <div v-for="item in paginated('items')" :key="item.item_id">
                             <div class="card mr-5 ml-2" style="width: 18rem;">
                                 <figure class="d-flex text-right m-0">
-                                    <div :v-if="item.bargain ">
+                                    <div v-if="item.bargain == true">
                                         <button class="btn floating" disabled >○ Bargain</button>
                                     </div>
                                     <img class="card-img-top" :src="item.photos[0]" alt="House Image">  
@@ -249,7 +185,7 @@
                                             <div class="mb-3">
                                                 <span>{{item.price}} Euros </span>
                                             </div>
-                                            <router-link tag="li" to="/property-detail" exact>
+                                            <router-link tag="li" to="/home-detail" exact>
                                                 <input type="submit" class="btn" value="Check it out" :id="item._id" v-on:click="checkItOut(item._id)">
                                             </router-link>
                                         </li>
@@ -269,7 +205,6 @@
 
 <script>
 import EventBus from '../../event-bus'
-import VueFaqAccordion from 'vue-faq-accordion'
 import {getPropertiesById, getPropertiesByParams} from '../../axios-service'
 
 export default {
@@ -279,14 +214,13 @@ export default {
         type: 'home',  
         paginate:['items'],
         items: [],
+        price: 0
     }
-  },
-    components: {
-        VueFaqAccordion
   },
   async mounted() {
       await EventBus.$on('searching', data =>{
             this.items = data;
+            console.log(this.items);
       })
   }, 
   methods:{
@@ -301,13 +235,14 @@ export default {
             })
       },
       checkFilter(paramName, param, event){
+            param = this.price;
             getPropertiesByParams(this.type + 's', paramName, param, (err, data) =>{
                 try{
                     if (data.length > 0){
                         return this.items = data;
                      }
                 }
-                catch(err){
+                catch(err){ 
                     console.error(err)
                 } 
             })

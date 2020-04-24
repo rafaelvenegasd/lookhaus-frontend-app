@@ -25,13 +25,13 @@
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">Email</span>
             </div>
-            <input type="email" class="form-control" v-model="email" placeholder="Type your email" aria-label="Email" aria-describedby="basic-addon1">
+            <input type="email" class="form-control" v-model="email" placeholder="Type your email" aria-label="Email" aria-describedby="basic-addon1" required>
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">Password</span>
             </div>
-            <input type="password" class="form-control" v-model="password" placeholder="Type your password" aria-label="Email" aria-describedby="basic-addon1">
+            <input type="password" class="form-control" v-model="password" placeholder="Type your password" aria-label="Email" aria-describedby="basic-addon1" required>
           </div>
           <!-- <div class="d-flex justify-content-center align-items-center flex-column container">
             <div>

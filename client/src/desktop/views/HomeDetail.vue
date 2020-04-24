@@ -6,10 +6,13 @@
       <div class="mt-4">          
 
           <carousel :per-page="1" :navigationEnabled="true" :mouse-drag="false" :autoplay="true" :autoplayTimeout="5000" :loop="true">
-            <slide>
-              <img class="photos" width="800px" src="../assets/images/cover.jpg">
-            </slide>
-            <slide>
+            <div v-for="image in item.photos" :key="image.photos">
+              <slide>
+                <img class="photos" width="800px" src="image">
+              </slide>
+            </div>
+            
+            <!-- <slide>
               <img class="photos" width="800px" src="../assets/images/cover2.jpg">
             </slide>
             <slide>
@@ -17,7 +20,7 @@
             </slide>
             <slide>
               <img class="photos" width="800px" src="../assets/images/img.jpg">
-            </slide>
+            </slide> -->
           </carousel>
       </div>
       </div>
@@ -61,19 +64,19 @@
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">Name</span>
             </div>
-            <input type="text" class="form-control" placeholder="Type your name" aria-label="Name" aria-describedby="basic-addon1">
+            <input type="text" class="form-control" placeholder="Type your name" aria-label="Name" v-model="name" aria-describedby="basic-addon1" required>
           </div>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">Email</span>
             </div>
-            <input type="email" class="form-control" placeholder="Type your email" aria-label="Email" aria-describedby="basic-addon1">
+            <input type="email" class="form-control" placeholder="Type your email" v-model="email" aria-label="Email" aria-describedby="basic-addon1" required>
           </div>
           <div class=" mb-3">
             <div class="mb-2">
               <label for="message">Message</label>
             </div>
-            <textarea class="form-control" name="message" id="message" rows="10"></textarea>
+            <textarea class="form-control" name="message" id="message" v-model="message" rows="10" required></textarea>
           </div>
         </form>
         <div class="d-flex justify-content-end">
@@ -92,13 +95,18 @@ import Maps from '../components/maps.vue'
 import { Carousel, Slide } from 'vue-carousel';
 
 export default {
-  name: 'Login',
+  name: 'homeDetail',
   data(){
     return {
       item: [],
+      params: '',
+      name: '', 
+      email: '', 
+      message: ''
     }
   },
   components:{
+    
     Maps, 
     Carousel,
     Slide
@@ -110,6 +118,12 @@ export default {
   }, 
   methods:{
     reachOwner(){
+        this.params = {
+          "name": this.name, 
+          "email": this.email, 
+          "message": this.message 
+        }
+
       event.preventDefault();
       Swal.fire(
         'Message sended!',

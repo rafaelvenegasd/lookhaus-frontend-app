@@ -40,10 +40,9 @@ export default {
       }
     },
     mounted() {
-        if(localStorage.getItem('access_token')){
-          this.authenticated = true;
-        }
-        console.log(this.authenticated);
+      if(localStorage.getItem('access_token')){
+        this.authenticated = true;
+      }
 
       EventBus.$on('username', username =>{
           this.username = username;
