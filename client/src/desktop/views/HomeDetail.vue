@@ -54,12 +54,12 @@
                 <li class="mt-2"> <b>Seller:</b>  {{item.user_username}}</li>
                 <li class="mt-2"> <b>Condition:</b>  {{item.condition}}</li>
                 <li class="mt-2"> <b>Floor:</b>  {{item.floor}}</li>
-                <li class="mt-2"> <b>Lift:</b>  {{item.lift}}</li>
-                <li class="mt-2"> <b>Pets allowed:</b>  {{item.pets_allowed}}</li>
-                <li class="mt-2"> <b>Garden:</b>  {{item.garden}}</li>
-                <li class="mt-2"> <b>Swimming pool:</b>  {{item.swimming_pool}}</li>
-                <li class="mt-2"> <b>Air Conditioning:</b>  {{item.air_conditioning}}</li>
-                <li class="mt-2"> <b>Heating:</b>  {{item.heating}}</li>
+                <li class="mt-2"> <b>Lift:</b>  {{item.lift | format }}</li>
+                <li class="mt-2"> <b>Pets allowed:</b>  {{item.pets_allowed | format }}</li>
+                <li class="mt-2"> <b>Garden:</b>  {{item.garden | format }}</li>
+                <li class="mt-2"> <b>Swimming pool:</b>  {{item.swimming_pool | format }}</li>
+                <li class="mt-2"> <b>Air Conditioning:</b>  {{item.air_conditioning | format }}</li>
+                <li class="mt-2"> <b>Heating:</b>  {{item.heating | format }}</li>
                 <li class="mt-2"> <b>Orientation:</b>  {{item.orientation}}</li>
                 <li class="mt-2"> <b>Energy Certificate:</b>  {{item.energy_certificate}}</li>
                 <li class="mt-2"> <b>Parking:</b>  {{item.parking}}</li>
@@ -119,6 +119,15 @@ export default {
     Maps, 
     Carousel,
     Slide
+  },
+  filters:{
+    format: function (value){
+      if(value = true){
+        return value = "Yes"
+      }else{
+        return value= "No"
+      }
+    }
   },
   mounted() {
       EventBus.$on('checkItOut', data =>{
