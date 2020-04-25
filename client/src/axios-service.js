@@ -49,8 +49,8 @@ export function signupUser(params, cb){
   })
 }
 
-export function createHome(params, cb){
-  axios.post(base_url + `home/add`, params)
+export function addProperty(type, params, token, cb){
+  axios.post(base_url + type + `/add`, params, {headers: { Authorization: "Bearer " + token }}) 
   .then(function (res) {
       console.log(res.data);
       cb(null, res.data);

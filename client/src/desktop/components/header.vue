@@ -5,8 +5,12 @@
       <a class="navbar-brand v-market-logo router-link-active"><img alt="Lookhaus logo" src="../assets/images/logos/black-small.png" class="logo"></a> 
     </router-link>
       <ul class="row navbar">
-        <li><router-link tag="li" v-if="authenticated" to="/create-property" exact>
-          <a class="nav-link"><input type="submit" class="btn" value="Post your Place"></a>
+        <li><router-link tag="li" v-if="authenticated" to="/create-home" exact>
+          <a class="nav-link"><input type="submit" class="btn" value="Post a place to live"></a>
+        </router-link></li>
+
+        <li><router-link tag="li" v-if="authenticated" to="/create-office" exact>
+          <a class="nav-link"><input type="submit" class="btn" value="Post a Place to work"></a>
         </router-link></li>
 
         <li><router-link tag="li" v-if="authenticated" to="/user-profile" exact>

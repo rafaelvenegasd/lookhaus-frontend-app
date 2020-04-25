@@ -179,15 +179,15 @@
                             <div class="d-flex justify-content-center align-items-center flex-column container text-center">
                                 <h5>Lift</h5>
                                 <div>
-                                    <input type="radio" name="lift" id="lift-true" class="mr-2 btn-radio" v-model="lift" value="true"><label for="lift-true" class="mr-3">Yes</label>
-                                    <input type="radio" name="lift" id="lift-false" class="mr-2 btn-radio" v-model="lift" value="false"><label for="lift-false">No</label>
+                                    <input type="radio" name="lift" id="lift-true" class="mr-2 btn-radio" v-model="lift" value=true><label for="lift-true" class="mr-3">Yes</label>
+                                    <input type="radio" name="lift" id="lift-false" class="mr-2 btn-radio" v-model="lift" value=false><label for="lift-false">No</label>
                                 </div>
                             </div>
                             <div class="d-flex justify-content-center align-items-center flex-column container text-center">
                                 <h5>Pets allowed</h5>
                                 <div>
-                                    <input type="radio" name="pets" id="pets-true" class="mr-2 btn-radio" v-model="pets" value="true"><label for="pets-true" class="mr-3">Yes</label>
-                                    <input type="radio" name="pets" id="pets-false" class="mr-2 btn-radio" v-model="pets" value="false"><label for="pets-false">No</label>
+                                    <input type="radio" name="pets" id="pets-true" class="mr-2 btn-radio" v-model="pets" value=true><label for="pets-true" class="mr-3">Yes</label>
+                                    <input type="radio" name="pets" id="pets-false" class="mr-2 btn-radio" v-model="pets" value=false><label for="pets-false">No</label>
                                 </div>
                             </div>
                         </div>
@@ -198,15 +198,15 @@
                             <div class="d-flex justify-content-center align-items-center flex-column container text-center">
                                 <h5>Garden</h5>
                                 <div>
-                                    <input type="radio" name="garden" id="garden-true" class="mr-2 btn-radio" v-model="garden" value="true"><label for="garden-true" class="mr-3">Yes</label>
-                                    <input type="radio" name="garden" id="garden-false" class="mr-2 btn-radio" v-model="garden" value="false"><label for="garden-false">No</label>
+                                    <input type="radio" name="garden" id="garden-true" class="mr-2 btn-radio" v-model="garden" value=true><label for="garden-true" class="mr-3">Yes</label>
+                                    <input type="radio" name="garden" id="garden-false" class="mr-2 btn-radio" v-model="garden" value=false><label for="garden-false">No</label>
                                 </div>
                             </div>
                             <div class="d-flex justify-content-center align-items-center flex-column container text-center">
                                 <h5>Swimming pool</h5>
                                 <div>
-                                    <input type="radio" name="pool" id="pool-true" class="mr-2 btn-radio" v-model="pool" value="true"><label for="pool-true" class="mr-3">Yes</label>
-                                    <input type="radio" name="pool" id="pool-false" class="mr-2 btn-radio" v-model="pool" value="false"><label for="pool-false">No</label>
+                                    <input type="radio" name="pool" id="pool-true" class="mr-2 btn-radio" v-model="pool" value=true><label for="pool-true" class="mr-3">Yes</label>
+                                    <input type="radio" name="pool" id="pool-false" class="mr-2 btn-radio" v-model="pool" value=false><label for="pool-false">No</label>
                                 </div>
                             </div>
                         </div>
@@ -217,15 +217,15 @@
                             <div class="d-flex justify-content-center align-items-center flex-column container text-center">
                                 <h5>Air conditioning</h5>
                                 <div>
-                                    <input type="radio" name="air" id="air-true" class="mr-2 btn-radio" v-model="air" value="true"><label for="air-true" class="mr-3">Yes</label>
-                                    <input type="radio" name="air" id="air-false" class="mr-2 btn-radio" v-model="air" value="false"><label for="air-false">No</label>
+                                    <input type="radio" name="air" id="air-true" class="mr-2 btn-radio" v-model="air" value=true><label for="air-true" class="mr-3">Yes</label>
+                                    <input type="radio" name="air" id="air-false" class="mr-2 btn-radio" v-model="air" value=false><label for="air-false">No</label>
                                 </div>
                             </div>
                             <div class="d-flex justify-content-center align-items-center flex-column container text-center">
                                 <h5>Heating</h5>
                                 <div>
-                                    <input type="radio" name="heating" id="heating-true" class="mr-2 btn-radio" v-model="heating" value="true"><label for="heating-true" class="mr-3">Yes</label>
-                                    <input type="radio" name="heating" id="heating-false" class="mr-2 btn-radio" v-model="heating" value="false"><label for="heating-false">No</label>
+                                    <input type="radio" name="heating" id="heating-true" class="mr-2 btn-radio" v-model="heating" value=true><label for="heating-true" class="mr-3">Yes</label>
+                                    <input type="radio" name="heating" id="heating-false" class="mr-2 btn-radio" v-model="heating" value=false><label for="heating-false">No</label>
                                 </div>
                             </div>
                         </div>
@@ -255,7 +255,7 @@
 
 <script>
 import Swal from 'sweetalert2'
-import {createHome} from '../../../axios-service'
+import {addProperty} from '../../../axios-service'
 
 export default {
     name: 'createHome',
@@ -263,6 +263,7 @@ export default {
         return{
             params: [],
             selectedFiles: [], 
+            type: 'home',
             description: '', 
             name: '',
             price: 100,
@@ -278,6 +279,7 @@ export default {
             floor: '', 
             energy: '',
             orientation: '',
+            token: '',
             parking: 'A parking spot increments by 100€/month',
             lift: false, 
             pets: false, 
@@ -318,17 +320,20 @@ export default {
                 "heating": this.heating,
                 "parking": this.parking,
                 "bargain": this.bargain,
-
             }
 
-            createHome(this.params, (err, data) =>{
+            this.token = localStorage.getItem('access_token');
+            event.preventDefault();
+            console.log(this.params);
+
+            addProperty(this.type, this.params, this.token, (err, data) =>{
                 if(err){
                     console.error(err)
                 } 
                 else{
                     event.preventDefault();
                     console.log(this.params);
-                    this.$router.replace({ name: "createHome" });
+                    // this.$router.replace({ name: "createHome" });
                     Swal.fire('Property published!', '', 'success')
                 }
             })
