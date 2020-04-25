@@ -1,32 +1,3 @@
-// import Vue from 'vue'
-// import getDevice from '../../DeviceService'
-// import VueRouter from 'vue-router'
-// import AppDesktop from '../AppDesktop.vue'
-// import AppMobile from '../AppMobile.vue'
-// import DesktopHome from '../views/desktop/Home.vue'
-// import DesktopLogin from '../views/desktop/Login.vue'
-// import MobileHome from '../views/mobile/Home.vue'
-
-// //Decide if mount a device or a mobile view
-// getDevice((err, data) =>{
-//     if(err){
-//       console.error(err)
-//     }
-//     else{
-//         if( data == 'desktop'){
-//             var routes = [{path: '/', name: "DesktopHome", component: DesktopHome }, {path: '/login', name: "DesktopLogin", component: DesktopLogin }];
-//             Vue.use(VueRouter);
-//             const router = new VueRouter({mode: 'history', routes})
-//             new Vue({ el: '#app', router, render: h => h(AppDesktop)})
-//         }else{
-//             var routes = [{ path: '/', name: "MobileHome", component: MobileHome }];
-//             Vue.use(VueRouter);
-//             const router = new VueRouter({mode: 'history', routes})
-//             new Vue({ el: '#app', router, render: h => h(AppMobile)})
-//         }
-//     }
-//   });
-
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
@@ -34,10 +5,11 @@ import Login from '../views/Login.vue'
 import Signup from '../views/Signup.vue'
 import Offices from '../views/Offices.vue'
 import Houses from '../views/Houses.vue'
-import homeDetail from '../views/homeDetail.vue'
-import officeDetail from '../views/officeDetail.vue'
-import Create from '../views/user-profile/Create.vue'
-import Update from '../views/user-profile/Update.vue'
+import homeDetail from '../views/HomeDetail.vue'
+import officeDetail from '../views/OfficeDetail.vue'
+import createHome from '../views/user-profile/CreateHome.vue'
+import createOffice from '../views/user-profile/CreateOffice.vue'
+import updateProperty from '../views/user-profile/UpdateProperty.vue'
 import Profile from '../views/user-profile/Profile.vue'
 
 
@@ -71,38 +43,43 @@ const routes = [
   {
     path: '/offices',
     name: 'Offices',
-    component: Offices, 
+    component: Offices 
 
   },
   {
     path: '/homes',
     name: 'Houses',
-    component: Houses, 
+    component: Houses 
   },
   {
-    path: '/create-property',
-    name: 'Create',
-    component: Create
+    path: '/create-home',
+    name: 'createHome',
+    component: createHome
   },
   {
-    path: '/update-property',
-    name: 'Update',
-    component: Update 
+    path: '/create-office',
+    name: 'createOffice',
+    component: createOffice
+  },
+  {
+    path: '/update-office',
+    name: 'updateProperty',
+    component: updateProperty 
   },
   {
     path: '/user-profile',
     name: 'Profile',
-    component: Profile, 
+    component: Profile 
   },
   {
     path: '/home-detail',
     name: 'homeDetail',
-    component: homeDetail, 
+    component: homeDetail 
   },
   {
     path: '/office-detail',
     name: 'officeDetail',
-    component: officeDetail, 
+    component: officeDetail 
   }
 ]
 

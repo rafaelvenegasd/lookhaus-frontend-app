@@ -156,6 +156,11 @@
                     </div>
                     </div>
                 </div>
+
+                <select class="custom-select" id="inputGroupSelect01" v-on:change="checkFilter('sort', 'invert')">
+                    <option value="newer">Newer</option>
+                    <option value="older">Older</option>
+                </select>
             </div>
             <!-- End Collapse -->
         
@@ -180,7 +185,7 @@
                                                 <li>Bedroom: {{item.bedrooms}}</li>
                                             </ul>
                                         </li>
-                                        <li class="list-group-item">Dirección: {{item.street}}, {{item.city}} </li>
+                                        <li class="list-group-item">Address: {{item.street}}, {{item.city}} </li>
                                         <li class="list-group-item">
                                             <div class="mb-3">
                                                 <span>{{item.price}} Euros </span>
@@ -217,8 +222,8 @@ export default {
         price: 0
     }
   },
-  async mounted() {
-      await EventBus.$on('searching', data =>{
+  mounted() {
+      EventBus.$on('searching', data =>{
             this.items = data;
             console.log(this.items);
       })

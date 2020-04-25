@@ -28,7 +28,7 @@
       <div class="mt-5">
         <div class="ml-3">
             <div class="mb-3">
-                <div :v-if="item.bargain">
+                <div v-if="item.bargain == true">
                     <button class="btn mt-4 mb-3" disabled >○ Bargain</button>
                 </div>
                 <h5 class="detail_tittle">{{item.price}} €</h5>
@@ -36,8 +36,8 @@
             <p class="mb-4 paragraph">{{item.description}}</p>
             <ul class="d-flex justify-content-between">
               <li class="details">Kind: {{item.kind}}</li>
-              <li class="details">Bathroom: {{item.bathrooms}}</li>
-              <li class="details">Bedroom: {{item.bedrooms}}</li>
+              <li class="details">Floor: {{item.floor}}</li>
+              <li class="details">Address: {{item.street}}, {{item.city}}, {{item.postalcode}}</li>
             </ul>
         </div>
     </div>
@@ -49,11 +49,18 @@
         </div>
         <div>
             <h5>Details</h5>
-            <ul>
-                <li>Detail 1</li>
-                <li>Detail 2</li>
-                <li>Detail 3</li>
-                <li>Detail 4</li>
+            <ul class="mt-4">
+                <li class="mt-2"> <b>Seller:</b>  {{item.user_username}}</li>
+                <li class="mt-2"> <b>Condition:</b>  {{item.condition}}</li>
+                <li class="mt-2"> <b>Floor:</b>  {{item.floor}}</li>
+                <li class="mt-2"> <b>Lift:</b>  {{item.lift}}</li>
+                <li class="mt-2"> <b>Pets allowed:</b>  {{item.pets_allowed}}</li>
+                <li class="mt-2"> <b>Terrace:</b>  {{item.terrace}}</li>
+                <li class="mt-2"> <b>Swimming pool:</b>  {{item.swimming_pool}}</li>
+                <li class="mt-2"> <b>Air Conditioning:</b>  {{item.air_conditioning}}</li>
+                <li class="mt-2"> <b>Heating:</b>  {{item.heating}}</li>
+                <li class="mt-2"> <b>Energy Certificate:</b>  {{item.energy_certificate}}</li>
+                <li class="mt-2"> <b>Parking:</b>  {{item.parking}}</li>
             </ul>
         </div>
     </div>

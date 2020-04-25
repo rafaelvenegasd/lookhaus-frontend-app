@@ -49,6 +49,18 @@ export function signupUser(params, cb){
   })
 }
 
+export function createHome(params, cb){
+  axios.post(base_url + `home/add`, params)
+  .then(function (res) {
+      console.log(res.data);
+      cb(null, res.data);
+  })
+  .catch(function (error) {
+      console.log(error);
+      cb(error, null);
+  })
+}
+
 export function loginUser(params, cb){
   axios.post(base_url + `login/users`, params)
   .then(function (res) {

@@ -112,7 +112,7 @@
 import Swal from 'sweetalert2'
 
 export default {
-    name: 'Create',
+    name: 'createOffice',
     data(){
         return{
             selectedFile: null

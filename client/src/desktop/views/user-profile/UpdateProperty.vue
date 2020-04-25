@@ -112,7 +112,7 @@
 import Swal from 'sweetalert2'
 import EventBus from '../../../event-bus'
 export default {
-    name: 'Update',
+    name: 'updateProperty',
     data(){
         return{
             item: [],

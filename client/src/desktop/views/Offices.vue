@@ -29,6 +29,12 @@
                     </div>
                     </div>
                 </div>
+                
+                <select class="custom-select" id="inputGroupSelect01" v-on:change="checkFilter('sort', 'invert')">
+                    <option value="newer">Newer</option>
+                    <option value="older">Older</option>
+                </select>
+
             </div>
             <!-- End Collapse -->
         
@@ -52,7 +58,7 @@
                                                 <li>Floor: {{item.floor}}</li>
                                             </ul>
                                         </li>
-                                        <li class="list-group-item">Dirección: {{item.street}}, {{item.city}}</li>
+                                        <li class="list-group-item">Address: {{item.street}}, {{item.city}}</li>
                                         <li class="list-group-item">
                                             <div class="mb-3">
                                                 <span>{{item.price}} Euros </span>
@@ -77,7 +83,7 @@
 
 <script>
 import EventBus from '../../event-bus'
-import {getPropertiesById} from '../../axios-service'
+import {getPropertiesById, getPropertiesByParams} from '../../axios-service'
 
 export default {
 name: 'Houses',
