@@ -73,9 +73,13 @@ export default {
                     console.error(err)
                 } 
                 else{
-                    localStorage.setItem('access_token', JSON.stringify(data.id_token));
-                    localStorage.setItem('properties', JSON.stringify(data.property_ids));
-                    EventBus.$emit('username', data.user);
+                    localStorage.setItem('access_token', data.id_token);
+                    localStorage.setItem('username', data.user_info.username);
+                    localStorage.setItem('email', data.user_info.email);
+                    localStorage.setItem('homes_ids', JSON.stringify(data.user_info.homes_ids));
+                    localStorage.setItem('offices_ids', JSON.stringify(data.user_info.offices_ids));
+
+                    EventBus.$emit('username', data.user_info.username);
                     this.$router.replace({ name: "Home" });
                 }
             })

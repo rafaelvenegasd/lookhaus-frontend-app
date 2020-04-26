@@ -73,7 +73,7 @@ export default {
                     console.error(err)
                 } 
                 else{
-                    console.log(this.params);
+                    this.$router.replace({ name: "Home" });
                 }
             })
         }

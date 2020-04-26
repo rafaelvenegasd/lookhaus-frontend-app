@@ -57,6 +57,10 @@ export default {
       logout() {
           this.authenticated = false;
           localStorage.removeItem('access_token');
+          localStorage.removeItem('username');
+          localStorage.removeItem('email');
+          localStorage.removeItem('homes_ids');
+          localStorage.removeItem('offices_ids');
       }
     }
 }
