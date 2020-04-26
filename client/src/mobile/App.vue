@@ -1,26 +1,24 @@
 <template>
   <div>
-    <!-- <Header></Header> -->
-    <div>
+    <Header></Header>
       <router-view/>
-    </div>
-    <!-- <Footer></Footer> -->
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
-// import  Header  from "./components/web/header.vue";
-// import  Footer  from "./components/web/footer.vue";
+import  Header  from "./components/header.vue";
+import  Footer  from "./components/footer.vue";
 
 export default {
     name: "App",
-  //   components:{
-  //     Header,
-  //     Footer
-  //  }
+    components:{
+      Header,
+      Footer
+   }
 }
 </script>
 
 <style>
-  @import'~bootstrap/dist/css/bootstrap.css';
+  @import'~materialize-css/dist/css/materialize.min.css';
 </style>

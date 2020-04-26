@@ -1,0 +1,28 @@
+
+html {
+    min-height: 100%;
+    position: relative;
+  }
+
+.footer{
+    position: absolute;
+    bottom: 0;
+}
+
+.footer-copyright{
+    text-align: center;
+    background-color: $primary-color !important;
+    color: $secondary-text-color !important;
+    height: 50px;
+}
+
+.line{
+    margin-top: 0;
+    border-top: 1px solid black;
+    width: 80px;
+}
+
+.box{
+    display: -webkit-box;
+    -webkit-box-align: center;
+}

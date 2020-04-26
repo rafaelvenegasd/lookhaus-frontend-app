@@ -56,7 +56,7 @@ module.exports = {
 	},
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
-        new VueLoaderPlugin(),
+		new VueLoaderPlugin(),
         // new HtmlWebpackPlugin({
         //     template: './index.html',
         //     filename: 'desktop/index.html',
