@@ -1,5 +1,6 @@
 <template>
-  <footer class="footer">
+<div class="content-big-box">
+  <footer class="footer mt-5">
     <div class="d-flex justify-center mr-5">
             <div class="mt-3 box">
               <p class="mr-4">Where your future home is </p>
@@ -12,7 +13,8 @@
         <span href="#"> Made with ♥ by Prattya Data | Rafael Venegas | Diego Arturo Silva | Cristina Moreno </span> 
       </div>
     </div>
-    </footer>
+  </footer>
+</div>
 </template>
 
 <script>

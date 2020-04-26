@@ -26,51 +26,6 @@ $secondary-text-color: white;
 	justify-items: center;
 }
 
-//Margin
-.mb-5{
-    margin-bottom: 1.75rem !important;
-}
-.mb-4{
-    margin-bottom: 1.5rem !important;
-}
-.mt-4{
-    margin-top: 1.5rem !important;
-}
-.mr-4{
-    margin-right: 1.5rem !important;
-}
-.ml-4{
-    margin-top: 1.5rem !important;
-}
-.ml-4{
-    margin-right: 1.5rem !important;
-}
-.mt-3{
-    margin-top: 1rem !important;
-}
-.mr-3{
-    margin-right: 1rem !important;
-}
-.mt-2{
-    margin-top: .5rem !important;
-}
-
-//Paddings 
-.pt-3{
-    padding-top: 1rem !important;
-}
-.pb-3{
-    padding-bottom: 1rem !important;
-}
-.pt-2{
-    padding-top: .5rem !important;
-}
-.pb-2{
-    padding-bottom: .5rem !important;
-}
-pl-2{
-	padding-left: .5rem !important;
-}
 
 .container-box{
 	display: flex;
@@ -101,6 +56,7 @@ pl-2{
 
 .justify-center{
 	justify-content: center;
+	text-align: -webkit-center;
 }
 
 .d-grid{
@@ -190,74 +146,7 @@ li{
 	height: auto !important;
 }
 
-
 input[type='range'] {
-	display: inline-block;
-	width: 350px;
+	height: auto;
   }
   
-  input[type='range']:focus {
-	outline: none;
-  }
-  
-  input[type='range'],
-  input[type='range']::-webkit-slider-runnable-track,
-  input[type='range']::-webkit-slider-thumb {
-	-webkit-appearance: none;
-  }
-  
-  input[type=range]::-webkit-slider-thumb {
-	background-color: $primary-color;
-	width: 20px;
-	height: 20px;
-	border: 3px solid $secondary-color;
-	border-radius: 50%;
-	margin-top: -9px;
-  }
-  
-  input[type=range]::-moz-range-thumb {
-	background-color: $primary-color;
-	width: 15px;
-	height: 15px;
-	border: 3px solid $secondary-color;
-	border-radius: 50%;
-  }
-  
-  input[type=range]::-ms-thumb {
-	background-color: $primary-color;
-	width: 20px;
-	height: 20px;
-	border: 3px solid $secondary-color;
-	border-radius: 50%;
-  }
-  
-  input[type=range]::-webkit-slider-runnable-track {
-	background-color: $primary-color;
-	height: 3px;
-  }
-  
-  input[type=range]:focus::-webkit-slider-runnable-track {
-	outline: none;
-  }
-  
-  input[type=range]::-moz-range-track {
-	background-color: $primary-color;
-	height: 3px;
-  }
-  
-  input[type=range]::-ms-track {
-	background-color: $primary-color;
-	height: 3px;
-  }
-  
-  input[type=range]::-ms-fill-lower {
-	background-color: HotPink
-  }
-  
-  input[type=range]::-ms-fill-upper {
-	background-color: black;
-  } 
-
-
-
-

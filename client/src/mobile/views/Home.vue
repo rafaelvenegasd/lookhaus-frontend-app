@@ -8,31 +8,14 @@
         <span>Find the perfect place</span>
       </div>
       <div>
-      <div>
-        <form action="#" class="d-flex justify-center mt-4">
-          <p class="mr-4">
-            <label>
-              <input name="group1" type="radio" checked value="homes" v-model="item_selected"/>
-              <span>Place to live</span>
-            </label>
-          </p>
-          <p>
-            <label>
-              <input name="group1" type="radio" value="offices" v-model="item_selected" />
-              <span>Place to work / Office</span>
-            </label>
-          </p>
-        </form>
-      </div>
 
-        <!-- <div class="input-field col s12">
+        <div class="input-field col s12">
             <select v-model="item_selected">
                 <option disabled selected value="">Select a kind of property</option>
                 <option value="homes">Place to live</option>
                 <option value="offices">Place to work / Office</option>
             </select>
-            <label>Kind</label>
-        </div> -->
+        </div>
         
         <router-link tag="li" :to="item_selected" exact>
           <input type="submit" value="Search" v-on:click="search()">
@@ -67,19 +50,23 @@ export default {
           message: '',
           item_selected: ''  
       }
-    },
-    methods:{
-        search(){
-          getProperties(this.item_selected, (err, data) =>{
-                if(err){
-                    console.error(err)
-                } 
-                else{
-                    EventBus.$emit('searching', data);
-                }
-            })
-        }
-    }
+  },
+  mounted(){
+    const elems = document.querySelectorAll('select');
+    const instances = M.FormSelect.init(elems, null);
+  },
+  methods:{
+      search(){
+        getProperties(this.item_selected, (err, data) =>{
+              if(err){
+                  console.error(err)
+              } 
+              else{
+                  EventBus.$emit('searching', data);
+              }
+          })
+      }
+  }
 }
 </script>
 

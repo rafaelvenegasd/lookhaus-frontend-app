@@ -1,7 +1,7 @@
 // @import "~bootstrap/scss/bootstrap";
 
 //BASE FOLDER (Are the defaults. They are almost exclusively single element selectors but it could include attribute selectors, pseudo-class selectors, child selectors or sibling selectors. Essentially, a base style says that wherever this element is on the page, it should look like this.)
-// @import "BASE/materialize";
+@import "BASE/materialize";
 @import "BASE/vars";
 @import "BASE/helpers";
 @import "BASE/common";
