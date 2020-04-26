@@ -40,10 +40,10 @@
                                                 <div class="mb-3">
                                                     <span>{{item.price}} Euros </span>
                                                 </div>
-                                                <router-link tag="li" to="/update-property" exact>
+                                                <!-- <router-link tag="li" to="/update-property" exact>
                                                     <input type="submit" class="btn mb-2" value="Edit Property" v-on:click="goToUpdate(item._id)">
                                                 </router-link>
-                                                <button type="submit" class="btn transparent-btn mb-4" v-on:click="deleteProperty()"> Delete Property </button>
+                                                <button type="submit" class="btn transparent-btn mb-4" v-on:click="deleteProperty()"> Delete Property </button> -->
                                             </li>
                                         </ul>
                                     </div>
@@ -77,10 +77,10 @@
                                                 <div class="mb-3">
                                                     <span>{{item.price}} Euros </span>
                                                 </div>
-                                                <router-link tag="li" to="/update-property" exact>
+                                                <!-- <router-link tag="li" to="/update-property" exact>
                                                     <input type="submit" class="btn mb-2" value="Edit Property" v-on:click="goToUpdate(item._id)">
                                                 </router-link>
-                                                <button type="submit" class="btn transparent-btn mb-4" v-on:click="deleteProperty()"> Delete Property </button>
+                                                <button type="submit" class="btn transparent-btn mb-4" v-on:click="deleteProperty()"> Delete Property </button> -->
                                             </li>
                                         </ul>
                                     </div>
@@ -138,33 +138,37 @@ export default {
         this.homes_ids = localStorage.getItem('homes_ids');
         this.offices_ids = localStorage.getItem('offices_ids');
 
-        this.homes_ids.prototype.forEach(id_item => {
-            this.type = 'home';
-            getPropertiesById(this.type, id_item, (err, data) =>{
-                if(err){
-                    console.error(err)
-                } 
-                else{
-                    this.properties.push(data);
-                }
-            })
-        });
+        if(this.homes_ids =! []){
+            this.homes_ids.prototype.forEach(id_item => {
+                this.type = 'home';
+                getPropertiesById(this.type, id_item, (err, data) =>{
+                    if(err){
+                        console.error(err)
+                    } 
+                    else{
+                        this.properties.push(data);
+                    }
+                })
+            });
+        }
 
-        this.offices_ids.prototype.forEach(id_item => {
-            this.type = 'office';
-            getPropertiesById(this.type, id_item, (err, data) =>{
-                if(err){
-                    console.error(err)
-                } 
-                else{
-                    this.properties.push(data);
-                }
-            })
-        });
+        if(this.offices_ids =! []){
+            this.offices_ids.prototype.forEach(id_item => {
+                this.type = 'office';
+                getPropertiesById(this.type, id_item, (err, data) =>{
+                    if(err){
+                        console.error(err)
+                    } 
+                    else{
+                        this.properties.push(data);
+                    }
+                })
+            });
+        }
     }, 
     methods:{
         async goToUpdate(id){
-          await getPropertiesById(this.type, id, (err, data) =>{
+            await getPropertiesById(this.type, id, (err, data) =>{
                 if(err){
                     console.error(err)
                 } 
@@ -212,7 +216,3 @@ export default {
     }
 }
 </script>
-
-<style>
-
-</style>

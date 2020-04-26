@@ -224,8 +224,7 @@ export default {
   },
   mounted() {
       EventBus.$on('searching', data =>{
-            this.items = data;
-            console.log(this.items);
+        this.items = data;
       })
   }, 
   methods:{
