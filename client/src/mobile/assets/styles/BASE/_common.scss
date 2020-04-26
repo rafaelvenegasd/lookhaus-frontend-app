@@ -154,18 +154,11 @@ input[type="submit"]:hover {
 	color: $secondary-text-color;
 }
 
- input[type='radio']:checked {
+input[type="radio"]:checked+span:after {
 	width: 18px;
 	height: 18px;
-	border-radius: 15px;
-	top: -2px;
-	left: -1px;
-	position: relative;
-	content: '';
-	display: inline-block;
-	visibility: visible;
 	border: 2px solid white;
-	background-color: $secondary-color;
+	background-color: $secondary-color !important;
 }
 
 li{

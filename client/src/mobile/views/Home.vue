@@ -2,22 +2,38 @@
   <div>
     
     <div class="img-searcher-container"></div>
-    <div>
-      <div class="grid-center mt-3">
+    <div class="container">
+      <div class="grid-center mt-4">
         <img alt="Lookhaus logo" src="../assets/images/logos/black-small.png" class="logo mb-2">
         <span>Find the perfect place</span>
       </div>
       <div>
+      <div>
+        <form action="#" class="d-flex justify-center mt-4">
+          <p class="mr-4">
+            <label>
+              <input name="group1" type="radio" checked value="homes" v-model="item_selected"/>
+              <span>Place to live</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input name="group1" type="radio" value="offices" v-model="item_selected" />
+              <span>Place to work / Office</span>
+            </label>
+          </p>
+        </form>
+      </div>
 
-        
-        <div class="input-field col s12">
+        <!-- <div class="input-field col s12">
             <select v-model="item_selected">
                 <option disabled selected value="">Select a kind of property</option>
                 <option value="homes">Place to live</option>
                 <option value="offices">Place to work / Office</option>
             </select>
             <label>Kind</label>
-        </div>
+        </div> -->
+        
         <router-link tag="li" :to="item_selected" exact>
           <input type="submit" value="Search" v-on:click="search()">
         </router-link>
@@ -43,7 +59,6 @@
 <script>
 import EventBus from '../../event-bus'
 import {getProperties} from '../../axios-service'
-import {onSelect} from '../../materialize'
 
 export default {
   name: 'Home',
@@ -52,9 +67,6 @@ export default {
           message: '',
           item_selected: ''  
       }
-    },
-    mounted:{
-      onSelect(){}
     },
     methods:{
         search(){
